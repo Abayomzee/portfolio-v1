@@ -1,0 +1,116 @@
+:root {
+  --transition-time: 0.6s;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn:active,
+.btn:focus {
+  outline: none;
+}
+
+/* Tab Button */
+.btn-tab {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  color: var(--color-primary);
+  position: relative;
+  transition: 0.4s;
+  padding-bottom: 1rem;
+}
+
+.btn-tab:hover {
+  color: var(--color-8);
+}
+
+.btn-tab.active {
+  color: var(--color-8);
+}
+
+.btn-tab::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  background-color: var(--color-8);
+  transition: 0.4s;
+  left: 0;
+  bottom: 0;
+}
+
+.btn-tab.active::after {
+  height: 0.2rem;
+}
+
+/* Tab Button */
+
+/* Primary Btn */
+.btn-primary {
+  font-family: "Josefin Slab";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: var(--color-primary);
+  border: 0.05rem solid var(--color-1);
+  border-radius: 1.5rem;
+  position: relative;
+  transition: var(--transition-time);
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  border: .5px solid var(--color-secondary);
+}
+
+.btn-primary span {
+  position: relative;
+  transition: 0.4s;
+  transition: color 0.001s;
+  display: block;
+}
+
+.btn-primary:hover span {
+  color: var(--color-bg);
+  /* color: transparent; */
+}
+
+.btn-primary span::before {
+  position: absolute;
+  left: 0;
+  top: 160%;
+  transition: var(--transition-time);
+  color: var(--color-secondary);
+}
+
+.btn-primary:hover span {
+  top: 160%;
+  color: var(--color-secondary);
+}
+.btn-primary:hover span::before {
+  /* top: 0; */
+}
+
+.btn--contact span::before {
+  content: "Contact";
+}
+
+.btn--resume span::before {
+  content: "Resume";
+}
+/* Primary Btn */
+
+/* Button sizes */
+.btn-md {
+  padding: 0.9rem 2rem;
+}
+
+.btn-sm {
+  padding: 0.7rem 1.8rem;
+}
+/* Button sizes */

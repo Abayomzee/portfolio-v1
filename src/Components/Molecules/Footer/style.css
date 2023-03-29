@@ -1,0 +1,22 @@
+.foo {
+}
+
+.foo-wrapper {
+  padding-top: 9rem;
+  padding-bottom: 8rem;
+  /* background-color: red; */
+}
+
+.my-email{}
+
+.socials {}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link {
+  padding: 1rem;
+}

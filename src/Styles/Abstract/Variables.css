@@ -1,0 +1,31 @@
+:root {
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-primary: #a9a9a9;
+  --color-secondary: #ffd154;
+  --color-bg: #1c1c1c;
+
+  --color-1: #8f8f8f;
+  --color-2: #5f5f5f;
+
+  /* widths */
+  --max-row-width: 142rem;
+  --max-row-width-extended: 164rem;
+  --center-extended-side-padding: 12rem;
+  --prj-line-size: 0.1rem;
+
+  /* Breakpoints */
+  --xlg: 112.5em; /* 1800px  Big desktop */
+  --lg: 78.125em; /* 1250px --> Tablet landscape */
+  --md: 66.6em; /* 1065px --> Tablet landscape medium size */
+  --xmd: 65.31em; /* 1045px --> Tablet landscape small size */
+  --sm: 56.25em; /* 900px --> Tablet portrait */
+  --xsm: 37.5em; /* 600px --> Phone */
+  --xxsm: 28.75em; /* 460px --> Small Phone */
+
+  /* Fonts */
+  --font-1: "Jost", sans-serif;
+  --font-2: "Josefin Slab", serif;
+}

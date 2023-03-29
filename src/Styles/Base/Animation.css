@@ -1,0 +1,23 @@
+@keyframes bounce {
+  0% {
+    /* opacity: 0;
+    visibility: hidden; */
+    transform: translateY(-2rem);
+  }
+  50% {
+    /* opacity: 0;
+    visibility: hidden; */
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-2rem);
+  }
+}
+
+/* Classes */
+.animate-bounce {
+  animation: bounce 3s linear .3s infinite;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}

@@ -1,0 +1,30 @@
+.tn {
+  padding: 6.5rem 0 3.5rem;
+}
+
+.tn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tn-left {
+  display: flex;
+  align-items: center;
+  gap: 25rem;
+}
+
+.tn-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tn-stack-ele {
+  display: flex;
+  flex-direction: column;
+}
+
+.tn-text {
+  font-family: var(--font-2);
+}
