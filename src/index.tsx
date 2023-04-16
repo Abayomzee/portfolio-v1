@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
 // Styles
 import "Styles/Abstract/Variables.css";
@@ -13,11 +13,13 @@ import "Styles/Base/Typography.css";
 import "Styles/Base/Animation.css";
 import "Styles/Base/Utilities.css";
 
+import "Styles/Components/Cursor.css";
+
 import "Styles/Layouts/Center.css";
 import "Styles/Layouts/Flex.css";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>

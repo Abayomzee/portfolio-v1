@@ -8,13 +8,13 @@ interface TopNavProps {}
 const Projects: React.FC<TopNavProps> = () => {
   // Variable
   const data = [
-    { name: "Stevia", stacks: "", col: "1" },
-    { name: "NodCredit", stacks: "", col: "2" },
-    { name: "Todo", stacks: "", col: "3" },
-    { name: "Metacare", stacks: "", col: "4" },
-    { name: "Qstore", stacks: "", col: "5" },
-    { name: "NodTransfer", stacks: "", col: "6" },
-    { name: "Afriglobal", stacks: "", col: "7" },
+    { name: "Stevia", stacks: "REACT JS, FRAMER MOTION", col: "1" },
+    { name: "NodCredit", stacks: "HTML, CSS, JAVASCRIPT", col: "2" },
+    { name: "Todo", stacks: "REACT JS", col: "3" },
+    { name: "Metacare", stacks: "REACT JS, FRAMER MOTION", col: "4" },
+    { name: "Qstore", stacks: "REACT JS, FRAMER MOTION", col: "5" },
+    { name: "NodTransfer", stacks: "HTML, CSS, JAVASCRIPT", col: "6" },
+    { name: "Afriglobal", stacks: "HTML, CSS, JAVASCRIPT", col: "7" },
   ];
 
   // Data to render

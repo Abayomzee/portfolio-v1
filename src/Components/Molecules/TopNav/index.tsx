@@ -11,23 +11,41 @@ const TopNav: React.FC<TopNavProps> = () => {
         <div className="tn-wrapper">
           <div className="tn-left">
             <div className="tn-stack-ele">
-              <Typography as="h6" className="hd-1" text="Abayomi" />
-              <Typography as="h6" className="hd-1" text="Okegbenro" />
+              <Typography
+                as="h6"
+                className="hd-1 cursor-effect small"
+                text="Abayomi"
+              />
+              <Typography
+                as="h6"
+                className="hd-1 cursor-effect small"
+                text="Okegbenro"
+              />
             </div>
             <div className="tn-stack-ele">
-              <Typography as="h6" className="hd-1" text="Frontend Develper" />
-              <Typography as="h6" className="hd-1" text="portfolio v1" />
+              <Typography
+                as="h6"
+                className="hd-1 cursor-effect small"
+                text="Frontend Develper"
+              />
+              <Typography
+                as="h6"
+                className="hd-1 cursor-effect small"
+                text="portfolio v1"
+              />
             </div>
           </div>
           <div className="tn-right">
             <Typography as="span" className="hd-2" text="👉" />
             <Button
-              className={"btn-primary btn-sm btn--contact"}
+              className={"btn-primary btn-sm btn--contact cursor-effect small"}
               onClick={() => (window.location.href = "/#contact")}
             >
               <span>Contact</span>
             </Button>
-            <Button className={"btn-primary btn-sm btn--resume"}>
+            <Button
+              className={"btn-primary btn-sm btn--resume cursor-effect small"}
+            >
               <span>Resume</span>
             </Button>
           </div>

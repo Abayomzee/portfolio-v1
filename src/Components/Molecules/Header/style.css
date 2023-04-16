@@ -5,7 +5,7 @@
 }
 
 .hd-wrapper {
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .hd-heading-head {
@@ -20,7 +20,7 @@
 }
 
 .heading-char:hover {
-  color: var(--color-white);
+  /* color: var(--color-white); */
 }
 
 .heading-char::before {

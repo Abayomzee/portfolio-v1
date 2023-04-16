@@ -23,7 +23,9 @@ const useDemoAnimation = () => {
   const projectsSection = ".prj";
   const projectsScrollDownIndicator = ".prj-scroll-indicator";
   const projectsScrollDownArrow = ".prj-scroll-arrow";
-  const projectCardName = ".prjc-name";
+  const projectCardName = ".prjc-name-and-tools";
+  // const projectCardName = ".prjc-name";
+  // const projectCardTools = ".prjc-tools";
 
   // Effects
   useLayoutEffect(() => {
@@ -49,6 +51,7 @@ const useDemoAnimation = () => {
       gsap.set(prjRowsAfter, { top: "120%" });
       // gsap.set(prjCardBefore, { opacity: 0 });
       gsap.set(projectCardName, { opacity: 0, y: "100" });
+      // gsap.set(projectCardTools, { opacity: 0, y: "60" });
 
       tl.current = gsap
         .timeline()
@@ -97,7 +100,6 @@ const useDemoAnimation = () => {
         });
 
       // Projects section
-
       const prjTl = gsap
         .timeline()
         .to(prjHeaderBefore, {
@@ -124,6 +126,7 @@ const useDemoAnimation = () => {
         .to(prjRowsAfter, { top: "100%", duration: 0.9, stagger: 0.1 }, "<")
         .to(prjCardsAfter, { height: "100%", duration: 1 }, "<")
         .to(projectCardName, { y: "0", opacity: 1, duration: 0.6 }, "<=+0.6");
+      // .to(projectCardTools, { y: "0", opacity: 1, duration: 0.6 }, "<=+0.4");
 
       scrollTrigger.create({
         trigger: projectsSection,
@@ -131,6 +134,44 @@ const useDemoAnimation = () => {
         toggleActions: "play none none reverse",
         animation: prjTl,
         markers: true,
+      });
+
+      // Cursor
+      // Cursor effect
+      const cursor = document.querySelector(".cursor");
+      const cursorEffect = document.querySelectorAll(".cursor-effect");
+      let mouseX = 0;
+      let mouseY = 0;
+
+      gsap.to({}, 0.01, {
+        repeat: -1,
+        onRepeat: function () {
+          gsap.set(cursor, {
+            css: {
+              left: mouseX,
+              top: mouseY,
+            },
+          });
+        },
+      });
+
+      window.addEventListener("mousemove", function (e: any) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      cursorEffect.forEach((link) => {
+        link.addEventListener("mouseleave", () => {
+          cursor?.classList.remove("grow");
+          cursor?.classList.remove("grow-small");
+        });
+        link.addEventListener("mousemove", () => {
+          cursor?.classList.add("grow");
+          if (link.classList.contains("small")) {
+            cursor?.classList.remove("grow");
+            cursor?.classList.add("grow-small");
+          }
+        });
       });
 
       // Footer animation

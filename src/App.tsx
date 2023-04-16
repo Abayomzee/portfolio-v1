@@ -4,9 +4,12 @@ const Home = React.lazy(() => import("Components/Pages/Home"));
 
 function App() {
   return (
-    <Suspense fallback='Loading'>
-      <Home />
-    </Suspense>
+    <>
+      <div className="cursor"></div>
+      <Suspense fallback="Loading">
+        <Home />
+      </Suspense>
+    </>
   );
 }
 

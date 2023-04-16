@@ -27,7 +27,10 @@ const Header: React.FC<TopNavProps> = () => {
         <div className="hd-wrapper">
           {/* Heading */}
           <div className="hd-heading-head">
-            <Typography as="h6" className="hd-3 text-uppercase heading">
+            <Typography
+              as="h6"
+              className="hd-3 text-uppercase heading cursor-effect"
+            >
               {frontTexts.map((text, index) => (
                 <Typography
                   key={index}
@@ -39,7 +42,10 @@ const Header: React.FC<TopNavProps> = () => {
               ))}
             </Typography>
             <div className="hd-heading-divder"></div>
-            <Typography as="h6" className="hd-3 text-uppercase heading">
+            <Typography
+              as="h6"
+              className="hd-3 text-uppercase heading cursor-effect"
+            >
               {endTexts.map((text, index) => (
                 <Typography
                   key={index}
@@ -53,7 +59,10 @@ const Header: React.FC<TopNavProps> = () => {
           </div>
           <div className="hd-heading-down">
             <div>
-              <Typography as="h6" className="hd-3 text-uppercase heading">
+              <Typography
+                as="h6"
+                className="hd-3 text-uppercase heading cursor-effect"
+              >
                 {developerTexts.map((text, index) => (
                   <Typography
                     key={index}
@@ -68,7 +77,7 @@ const Header: React.FC<TopNavProps> = () => {
               {/* Sub Heading */}
               <Typography
                 as="h6"
-                className="prg-1 hd-sub-heading-text mt-20 max-width-1252"
+                className="prg-1 hd-sub-heading-text mt-20 max-width-1252 cursor-effect small"
               >
                 Hello 👋, My name is Abayomi. I am a collaborative and creative
                 front-end engineer. I have over half a decade years of
