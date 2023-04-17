@@ -3,12 +3,13 @@ import gsap from "gsap";
 import scrollTrigger from "gsap/ScrollTrigger";
 import cssRule from "gsap/CSSRulePlugin";
 // import scrollSmoother from "gsap/ScrollSmoother";
+import LocomotiveScroll from "locomotive-scroll";
 
 gsap.registerPlugin(scrollTrigger);
 
 const useDemoAnimation = () => {
   // Refs
-  let tl = useRef<any>();
+  let tl = useRef();
 
   // Selectors
   const topNav = ".tn";
@@ -30,6 +31,36 @@ const useDemoAnimation = () => {
   // Effects
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      // Scroll Animation
+      const locoScroll = new LocomotiveScroll({
+        el: document.querySelector(".scroll-handler"),
+        smooth: true,
+        multiplier: 0.65,
+        // inertia: 0.3,
+      });
+
+      locoScroll.on("scroll", scrollTrigger.update);
+
+      scrollTrigger.scrollerProxy(".scroll-handler", {
+        scrollTop(value) {
+          return arguments.length
+            ? locoScroll.scrollTo(value, 0, 0)
+            : locoScroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+          return {
+            top: 0,
+            left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight,
+          };
+        },
+        pinType: document.querySelector(".scroll-handler").style.transform
+          ? "transform"
+          : "fixed",
+      });
+      // Scroll Animation
+
       let prjHeaderBefore = cssRule.getRule(".prj-wrapper-header::before");
       let prjHeaderAfter = cssRule.getRule(".prj-wrapper-header::after");
       let prjCardsAfter = cssRule.getRule(
@@ -134,6 +165,7 @@ const useDemoAnimation = () => {
         toggleActions: "play none none reverse",
         animation: prjTl,
         markers: true,
+        scroller: ".scroll-handler",
       });
 
       // Cursor
@@ -155,7 +187,12 @@ const useDemoAnimation = () => {
         },
       });
 
-      window.addEventListener("mousemove", function (e: any) {
+      window.addEventListener("mousemove", function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      window.addEventListener("scroll", function (e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
       });
@@ -186,8 +223,12 @@ const useDemoAnimation = () => {
           start: "top 80%",
           end: "bottom 90%",
           toggleActions: "restart none none reverse",
+          scroller: ".scroll-handler",
         },
       });
+
+      scrollTrigger.addEventListener("refresh", () => locoScroll.update());
+      scrollTrigger.refresh();
     });
 
     return () => ctx.revert();

@@ -6,9 +6,11 @@ function App() {
   return (
     <>
       <div className="cursor"></div>
-      <Suspense fallback="Loading">
-        <Home />
-      </Suspense>
+      <div className="scroll-handler">
+        <Suspense fallback="Loading">
+          <Home />
+        </Suspense>
+      </div>
     </>
   );
 }
