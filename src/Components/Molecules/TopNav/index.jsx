@@ -1,36 +1,37 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+// import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React from "react";
 import Typography from "Components/Atom/Typography";
 import "./style.css";
 import Button from "Components/Atom/Button/Button";
-import LocomotiveScroll from "locomotive-scroll";
+// import LocomotiveScroll from "locomotive-scroll";
 
 // interface TopNavProps {}
 // const TopNav: React.FC<TopNavProps> = () => {
 const TopNav = () => {
-  const scrollRef = useRef();
+  // const scrollRef = useRef();
 
   // Effects
-  useEffect(() => {
-    const scroll = new LocomotiveScroll();
-    scrollRef.current = scroll;
-    return () => {
-      scroll.destroy();
-    };
-  }, []);
+  // useEffect(() => {
+  //   const scroll = new LocomotiveScroll();
+  //   scrollRef.current = scroll;
+  //   return () => {
+  //     scroll.destroy();
+  //   };
+  // }, []);
 
-  const handleSmoothScrollClick = () => {
-    console.log(scrollRef.current);
-    console.log(scrollRef.current.scrollTo);
+  // const handleSmoothScrollClick = () => {
+  //   console.log(scrollRef.current);
+  //   console.log(scrollRef.current.scrollTo);
 
-    const sectionSelector = document.getElementById("contact"); //  select your anchor
-    scrollRef.current.scrollTo(sectionSelector, {
-      offset: 0,
-      callback: function () {},
-      duration: 600,
-      easing: [0.25, 0.0, 0.35, 1.0],
-      disableLerp: true,
-    });
-  };
+  //   const sectionSelector = document.getElementById("contact");
+  //   scrollRef.current.scrollTo(sectionSelector, {
+  //     offset: 0,
+  //     callback: function () {},
+  //     duration: 600,
+  //     easing: [0.25, 0.0, 0.35, 1.0],
+  //     disableLerp: true,
+  //   });
+  // };
 
   // Data to display
   return (
@@ -65,12 +66,13 @@ const TopNav = () => {
           </div>
           <div className="tn-right">
             <Typography as="span" className="hd-2" text="👉" />
-            <Button
+            {/*  <Button
               className={"btn-primary btn-sm btn--contact cursor-effect small"}
               onClick={() => handleSmoothScrollClick()}
+              data-scroll-to
             >
               <span>Contact</span>
-            </Button>
+            </Button> */}
             <Button
               className={"btn-primary btn-sm btn--resume cursor-effect small"}
             >
