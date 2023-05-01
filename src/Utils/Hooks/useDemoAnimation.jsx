@@ -219,7 +219,7 @@ const useDemoAnimation = () => {
         stagger: 0.1,
         scrollTrigger: {
           trigger: '[data-animate="footer-section"]',
-          // markers: true,
+          markers: true,
           start: "top 80%",
           end: "bottom 90%",
           toggleActions: "restart none none reverse",

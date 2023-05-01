@@ -1,12 +1,40 @@
-import React from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import Typography from "Components/Atom/Typography";
 import "./style.css";
 import Button from "Components/Atom/Button/Button";
+import LocomotiveScroll from "locomotive-scroll";
 
-interface TopNavProps {}
-const TopNav: React.FC<TopNavProps> = () => {
+// interface TopNavProps {}
+// const TopNav: React.FC<TopNavProps> = () => {
+const TopNav = () => {
+  const scrollRef = useRef();
+
+  // Effects
+  useEffect(() => {
+    const scroll = new LocomotiveScroll();
+    scrollRef.current = scroll;
+    return () => {
+      scroll.destroy();
+    };
+  }, []);
+
+  const handleSmoothScrollClick = () => {
+    console.log(scrollRef.current);
+    console.log(scrollRef.current.scrollTo);
+
+    const sectionSelector = document.getElementById("contact"); //  select your anchor
+    scrollRef.current.scrollTo(sectionSelector, {
+      offset: 0,
+      callback: function () {},
+      duration: 600,
+      easing: [0.25, 0.0, 0.35, 1.0],
+      disableLerp: true,
+    });
+  };
+
+  // Data to display
   return (
-    <nav className="tn" data-scroll>
+    <nav className="tn" id="tn" data-scroll>
       <div className="center">
         <div className="tn-wrapper">
           <div className="tn-left">
@@ -39,7 +67,7 @@ const TopNav: React.FC<TopNavProps> = () => {
             <Typography as="span" className="hd-2" text="👉" />
             <Button
               className={"btn-primary btn-sm btn--contact cursor-effect small"}
-              onClick={() => {}}
+              onClick={() => handleSmoothScrollClick()}
             >
               <span>Contact</span>
             </Button>
