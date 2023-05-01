@@ -39,7 +39,7 @@ const TopNav: React.FC<TopNavProps> = () => {
             <Typography as="span" className="hd-2" text="👉" />
             <Button
               className={"btn-primary btn-sm btn--contact cursor-effect small"}
-              onClick={() => (window.location.href = "/#contact")}
+              onClick={() => {}}
             >
               <span>Contact</span>
             </Button>
