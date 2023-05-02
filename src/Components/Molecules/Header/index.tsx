@@ -13,12 +13,10 @@ const Header: React.FC<TopNavProps> = () => {
   const developerTextsDataChar = "d..e..p.r".split(""); //developer
   // const letters = "develoserabcdefghijklmnopqrstuvwxyz".split("");
 
-  const subHeaderText =
-    `Hello 👋, My name is Abayomi. I am a collaborative and creative front-end engineer. I have over half a decade years of experience building interactive experience through web and technology`.split(
-      "\n"
-    );
-
-  console.log({ subHeaderText });
+  // const subHeaderText =
+  //   `Hello 👋, My name is Abayomi. I am a collaborative and creative front-end engineer. I have over half a decade years of experience building interactive experience through web and technology`.split(
+  //     "\n"
+  //   );
 
   // Data to render
   return (

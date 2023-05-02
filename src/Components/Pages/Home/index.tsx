@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import TopNav from "Components/Molecules/TopNav";
 import Header from "Components/Molecules/Header";
 import Projects from "Components/Organisms/Projects";
@@ -9,16 +9,16 @@ import "./style.css";
 interface Props {}
 const Home: React.FC<Props> = () => {
   // Refs
-  const app = useRef<HTMLElement>(null);
-  const scrollRef = React.useRef<any>(null);
+  // const app = useRef<HTMLElement>(null);
+  // const scrollRef = React.useRef<any>(null);
 
   //   Hooks
   useDemoAnimation();
 
   //   Data to render
   return (
-    <main ref={scrollRef}>
-      <main ref={app}>
+    <main>
+      <main>
         <TopNav />
         <Header />
         <Projects />

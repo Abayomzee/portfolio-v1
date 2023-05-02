@@ -1,30 +1,52 @@
 // import React, { useEffect, useLayoutEffect, useRef } from "react";
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import Typography from "Components/Atom/Typography";
-import "./style.css";
 import Button from "Components/Atom/Button/Button";
 import gsap from "gsap";
-import LocomotiveScroll from "locomotive-scroll";
 import scrollTrigger from "gsap/ScrollTrigger";
+import "./style.css";
+import {
+  EmailIcon,
+  GithubIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  TwitterIcon,
+} from "Components/Atom/SvgIcons";
 
 gsap.registerPlugin(scrollTrigger);
 
 // interface TopNavProps {}
 // const TopNav: React.FC<TopNavProps> = () => {
 const TopNav = () => {
+  // States
+  const [showOptions, setShowOptions] = useState(false);
+
+  // Refs
+  let tl = useRef();
+
+  // Method
+  const handleShowContactOptions = () => {
+    if (showOptions) {
+      tl.current.reverse();
+    } else {
+      tl.current.play();
+    }
+    setShowOptions(!showOptions);
+  };
+
   // Effects
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Scroll Animation
-      const locoScroll = new LocomotiveScroll({
-        el: document.querySelector(".scroll-handler"),
-        smooth: true,
-        multiplier: 0.65,
-        // inertia: 0.3,
+      // Gsap
+      tl.current = gsap.timeline({ paused: true }).from(".tn-contact-option", {
+        y: -20,
+        opacity: 0,
+        autoAlpha: 0,
+        duration: 0.8,
+        stagger: 0.1,
       });
-
-      locoScroll.on("scroll", scrollTrigger.update);
     });
+
     return () => ctx.revert();
   }, []);
 
@@ -60,14 +82,64 @@ const TopNav = () => {
             </div>
           </div>
           <div className="tn-right">
-            <Typography as="span" className="hd-2" text="👉" />
-            {/*  <Button
-              className={"btn-primary btn-sm btn--contact cursor-effect small"}
-              onClick={() => handleSmoothScrollClick()}
-              data-scroll-to
-            >
-              <span>Contact</span>
-            </Button> */}
+            {/* <Typography as="span" className="hd-2" text="👉" /> */}
+            <div className="tn-contacts-box">
+              <Button
+                className={"btn-primary btn-sm btn--contact"}
+                onClick={() => handleShowContactOptions()}
+                data-scroll-to
+              >
+                <span>Contact</span>
+              </Button>
+              <div className="tn-contact-list">
+                <a
+                  href="mailto:okegbenroabayo@gmail.com"
+                  rel="noreferrer"
+                  target={"_blank"}
+                  className="tn-contact-option"
+                >
+                  <EmailIcon />
+                  <Typography as="span" className="prg-6" text={`Email`} />
+                </a>
+                <a
+                  href="https://www.instagram.com/abayomi.dev/"
+                  rel="noreferrer"
+                  target={"_blank"}
+                  className="tn-contact-option"
+                >
+                  <LinkedInIcon />
+                  <Typography as="span" className="prg-6" text={`linkedin`} />
+                </a>
+                <a
+                  href="https://www.instagram.com/abayomi.dev/"
+                  rel="noreferrer"
+                  target={"_blank"}
+                  className="tn-contact-option"
+                >
+                  <InstagramIcon />
+                  <Typography as="span" className="prg-6" text={`Instagram`} />
+                </a>
+
+                {/* <a
+                  href="https://www.instagram.com/abayomi.dev/"
+                  rel="noreferrer"
+                  target={"_blank"}
+                  className="tn-contact-option"
+                >
+                  <GithubIcon />
+                  <Typography as="span" className="prg-6" text={`Github`} />
+                </a> */}
+                {/* <a
+                  href="https://twitter.com/Abayomzee"
+                  rel="noreferrer"
+                  target={"_blank"}
+                  className="tn-contact-option"
+                >
+                  <TwitterIcon />
+                  <Typography as="span" className="prg-6" text={`Twitter`} />
+                </a> */}
+              </div>
+            </div>
             <Button
               className={"btn-primary btn-sm btn--resume cursor-effect small"}
             >
