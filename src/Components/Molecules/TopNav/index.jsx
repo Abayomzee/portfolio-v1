@@ -1,37 +1,32 @@
 // import React, { useEffect, useLayoutEffect, useRef } from "react";
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import Typography from "Components/Atom/Typography";
 import "./style.css";
 import Button from "Components/Atom/Button/Button";
-// import LocomotiveScroll from "locomotive-scroll";
+import gsap from "gsap";
+import LocomotiveScroll from "locomotive-scroll";
+import scrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(scrollTrigger);
 
 // interface TopNavProps {}
 // const TopNav: React.FC<TopNavProps> = () => {
 const TopNav = () => {
-  // const scrollRef = useRef();
-
   // Effects
-  // useEffect(() => {
-  //   const scroll = new LocomotiveScroll();
-  //   scrollRef.current = scroll;
-  //   return () => {
-  //     scroll.destroy();
-  //   };
-  // }, []);
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      // Scroll Animation
+      const locoScroll = new LocomotiveScroll({
+        el: document.querySelector(".scroll-handler"),
+        smooth: true,
+        multiplier: 0.65,
+        // inertia: 0.3,
+      });
 
-  // const handleSmoothScrollClick = () => {
-  //   console.log(scrollRef.current);
-  //   console.log(scrollRef.current.scrollTo);
-
-  //   const sectionSelector = document.getElementById("contact");
-  //   scrollRef.current.scrollTo(sectionSelector, {
-  //     offset: 0,
-  //     callback: function () {},
-  //     duration: 600,
-  //     easing: [0.25, 0.0, 0.35, 1.0],
-  //     disableLerp: true,
-  //   });
-  // };
+      locoScroll.on("scroll", scrollTrigger.update);
+    });
+    return () => ctx.revert();
+  }, []);
 
   // Data to display
   return (
