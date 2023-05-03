@@ -11,6 +11,7 @@ const useDemoAnimation = () => {
   // Refs
   let tl = useRef();
   let prjTl = useRef();
+  let cardRef = useRef();
 
   // Selectors
   const topNav = ".tn";
@@ -212,6 +213,46 @@ const useDemoAnimation = () => {
         });
       });
       // Cursor effect ----------------------------------------
+
+      // Project cards
+
+      const cards = document.querySelectorAll(".prjc-column");
+      cards.forEach((card) => {
+        const cc = card.querySelector(".prjc-name");
+        const ccAfter = cssRule.getRule(".prjc-name::after");
+
+        card.addEventListener("mousemove", () => {
+          gsap
+            .timeline()
+            .to(cc, {
+              bottom: "110%",
+              // y: -30,
+              duration: 1,
+              ease: "power.out(1)",
+            })
+            .to(ccAfter, {
+              top: 0,
+              duration: 1,
+              ease: "power.out(1)",
+            });
+        });
+        card.addEventListener("mouseleave", () => {
+          gsap
+            .timeline()
+            .to(cc, {
+              // opacity: 1,
+              bottom: 0,
+              duration: 1,
+              ease: "power.out(1)",
+            })
+            .to(ccAfter, {
+              top: "110%",
+              duration: 1,
+              ease: "power.out(1)",
+            });
+        });
+      });
+      // Project cards --------------------------------------
 
       // Footer animation
       gsap.from('[data-animate="footer-child"]', {

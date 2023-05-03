@@ -28,7 +28,7 @@
   /* border-right: 0.1rem solid var(--color-2); */
 }
 
-.prjc-column__right {
+.prjc-column {
   padding: 1rem;
   flex-grow: 1;
   position: relative;
@@ -37,7 +37,7 @@
   justify-content: space-between;
 }
 
-.prjc-column__right::before {
+.prjc-column::before {
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -48,7 +48,7 @@
   color: transparent;
 }
 
-.prjc-column__right-bottom {
+.prjc-column-bottom {
   display: flex;
   margin-top: 20rem;
   overflow: hidden;
@@ -59,11 +59,25 @@
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
+  /* background-color: red; */
 }
 
 .prjc-name {
   display: inline-block;
   margin-left: auto;
+  position: relative;
+}
+
+.prjc-name::after {
+  content: "Stevia";
+  position: absolute;
+  top: 110%;
+  right: 0;
+
+  font-weight: 700;
+  font-size: 10rem;
+  line-height: 100%;
+  color: green;
 }
 
 .prjc-tools {

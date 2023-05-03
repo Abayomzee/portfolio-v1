@@ -8,7 +8,12 @@ interface TopNavProps {}
 const Projects: React.FC<TopNavProps> = () => {
   // Variable
   const data = [
-    { name: "Stevia", stacks: "REACT JS, FRAMER MOTION", col: "1" },
+    {
+      name: "Stevia",
+      stacks: "REACT JS, FRAMER MOTION",
+      col: "1",
+      url: "https://www.steviapro.com",
+    },
     { name: "NodCredit", stacks: "HTML, CSS, JAVASCRIPT", col: "2" },
     { name: "Todo", stacks: "REACT JS", col: "3" },
     { name: "Metacare", stacks: "REACT JS, FRAMER MOTION", col: "4" },
