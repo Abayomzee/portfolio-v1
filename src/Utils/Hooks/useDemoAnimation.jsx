@@ -217,12 +217,13 @@ const useDemoAnimation = () => {
       gsap.from('[data-animate="footer-child"]', {
         opacity: 0,
         y: 50,
-        ease: "power.in(5)",
+        ease: "power.in(1)",
+        duration: 1,
         stagger: 0.1,
         scrollTrigger: {
           trigger: '[data-animate="footer-section"]',
           markers: true,
-          start: "top 80%",
+          start: "top 75%",
           end: "bottom 90%",
           toggleActions: "restart none none reverse",
           scroller: ".scroll-handler",

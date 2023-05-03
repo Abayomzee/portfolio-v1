@@ -7,14 +7,24 @@
   /* background-color: red; */
 }
 
-.my-email{}
+.my-email {
+  text-decoration: none;
+  color: var(--color-primary);
+  /* opacity: 1 !important; */
+}
 
-.socials {}
+.my-email:hover {
+  color: var(--color-white);
+}
+
+.socials {
+}
 
 .social-links {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-transform: uppercase;
 }
 
 .social-link {
