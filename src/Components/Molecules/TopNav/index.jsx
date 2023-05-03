@@ -7,7 +7,7 @@ import scrollTrigger from "gsap/ScrollTrigger";
 import "./style.css";
 import {
   EmailIcon,
-  GithubIcon,
+  // GithubIcon,
   InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
@@ -82,12 +82,11 @@ const TopNav = () => {
             </div>
           </div>
           <div className="tn-right">
-            {/* <Typography as="span" className="hd-2" text="👉" /> */}
+            <Typography as="span" className="hd-2" text="👉" />
             <div className="tn-contacts-box">
               <Button
                 className={"btn-primary btn-sm btn--contact"}
                 onClick={() => handleShowContactOptions()}
-                data-scroll-to
               >
                 <span>Contact</span>
               </Button>
@@ -102,7 +101,7 @@ const TopNav = () => {
                   <Typography as="span" className="prg-6" text={`Email`} />
                 </a>
                 <a
-                  href="https://www.instagram.com/abayomi.dev/"
+                  href="https://www.linkedin.com/in/okegbenro-abayomi-554952b3/"
                   rel="noreferrer"
                   target={"_blank"}
                   className="tn-contact-option"
@@ -119,9 +118,8 @@ const TopNav = () => {
                   <InstagramIcon />
                   <Typography as="span" className="prg-6" text={`Instagram`} />
                 </a>
-
                 {/* <a
-                  href="https://www.instagram.com/abayomi.dev/"
+                  href="https://github.com/Abayomzee"
                   rel="noreferrer"
                   target={"_blank"}
                   className="tn-contact-option"
@@ -129,7 +127,7 @@ const TopNav = () => {
                   <GithubIcon />
                   <Typography as="span" className="prg-6" text={`Github`} />
                 </a> */}
-                {/* <a
+                <a
                   href="https://twitter.com/Abayomzee"
                   rel="noreferrer"
                   target={"_blank"}
@@ -137,7 +135,7 @@ const TopNav = () => {
                 >
                   <TwitterIcon />
                   <Typography as="span" className="prg-6" text={`Twitter`} />
-                </a> */}
+                </a>
               </div>
             </div>
             <Button

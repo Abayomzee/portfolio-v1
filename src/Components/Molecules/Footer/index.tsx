@@ -25,37 +25,37 @@ const Footer: React.FC<FooterProps> = () => {
         dataAnimate="footer-child"
       />
 
-      <div className="socials mt-80">
+      <div className="socials mt-80" data-animate="footer-child">
         <Typography
           as="p"
           className="prg-4 text-center"
           text={`Socials`}
-          dataAnimate="footer-child"
+          // dataAnimate="footer-child"
         />
         <div className="social-links">
           <Typography
             as="p"
             className="prg-3 social-link"
             text={`LINKEDIN`}
-            dataAnimate="footer-child"
+            // dataAnimate="footer-child"
           />
           <Typography
             as="p"
             className="prg-3 social-link"
             text={`GITHUB`}
-            dataAnimate="footer-child"
+            // dataAnimate="footer-child"
           />
           <Typography
             as="p"
             className="prg-3 social-link"
             text={`TWITTER`}
-            dataAnimate="footer-child"
+            // dataAnimate="footer-child"
           />
           <Typography
             as="p"
             className="prg-3 social-link"
             text={`INSTAGRAM`}
-            dataAnimate="footer-child"
+            // dataAnimate="footer-child"
           />
         </div>
       </div>

@@ -5,11 +5,12 @@ import cssRule from "gsap/CSSRulePlugin";
 // import scrollSmoother from "gsap/ScrollSmoother";
 import LocomotiveScroll from "locomotive-scroll";
 
-gsap.registerPlugin(scrollTrigger);
+gsap.registerPlugin(scrollTrigger, cssRule);
 
 const useDemoAnimation = () => {
   // Refs
   let tl = useRef();
+  let prjTl = useRef();
 
   // Selectors
   const topNav = ".tn";
@@ -35,7 +36,7 @@ const useDemoAnimation = () => {
       const locoScroll = new LocomotiveScroll({
         el: document.querySelector(".scroll-handler"),
         smooth: true,
-        multiplier: 0.65,
+        multiplier: 0.7,
         // inertia: 0.3,
       });
 
@@ -67,7 +68,7 @@ const useDemoAnimation = () => {
         ".prjc-column:not(:last-child)::after"
       );
       let prjRowsAfter = cssRule.getRule(".prj-row::after");
-      let prjCardBefore = cssRule.getRule(".prjc-column__right::before");
+      // let prjCardBefore = cssRule.getRule(".prjc-column__right::before");
 
       // Texts animation
       gsap.set(char, { yPercent: -89 });
@@ -131,7 +132,7 @@ const useDemoAnimation = () => {
         });
 
       // Projects section
-      const prjTl = gsap
+      prjTl.current = gsap
         .timeline()
         .to(prjHeaderBefore, {
           width: "100%",
@@ -163,7 +164,7 @@ const useDemoAnimation = () => {
         trigger: projectsSection,
         start: "top 60%",
         toggleActions: "play none none reverse",
-        animation: prjTl,
+        animation: prjTl.current,
         markers: true,
         scroller: ".scroll-handler",
       });
@@ -210,12 +211,13 @@ const useDemoAnimation = () => {
           }
         });
       });
+      // Cursor effect ----------------------------------------
 
       // Footer animation
       gsap.from('[data-animate="footer-child"]', {
         opacity: 0,
         y: 50,
-        ease: "linear",
+        ease: "power.in(5)",
         stagger: 0.1,
         scrollTrigger: {
           trigger: '[data-animate="footer-section"]',
@@ -226,6 +228,7 @@ const useDemoAnimation = () => {
           scroller: ".scroll-handler",
         },
       });
+      // Footer animation ------------------------------------
 
       scrollTrigger.addEventListener("refresh", () => locoScroll.update());
       scrollTrigger.refresh();
