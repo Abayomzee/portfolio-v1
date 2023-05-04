@@ -217,38 +217,36 @@ const useDemoAnimation = () => {
       // Project cards
 
       const cards = document.querySelectorAll(".prjc-column");
-      cards.forEach((card) => {
+      cards.forEach((card, index) => {
         const cc = card.querySelector(".prjc-name");
-        const ccAfter = cssRule.getRule(".prjc-name::after");
+        const ccAfter = cssRule.getRule(`.prjc-name-${index + 1}::after`);
 
         card.addEventListener("mousemove", () => {
           gsap
             .timeline()
             .to(cc, {
-              bottom: "110%",
-              // y: -30,
+              top: "-100%",
               duration: 1,
-              ease: "power.out(1)",
+              ease: "power(10)",
             })
             .to(ccAfter, {
               top: 0,
               duration: 1,
-              ease: "power.out(1)",
+              ease: "power(10)",
             });
         });
         card.addEventListener("mouseleave", () => {
           gsap
             .timeline()
             .to(cc, {
-              // opacity: 1,
-              bottom: 0,
+              top: 0,
               duration: 1,
-              ease: "power.out(1)",
+              ease: "power(10)",
             })
             .to(ccAfter, {
-              top: "110%",
+              top: "100%",
               duration: 1,
-              ease: "power.out(1)",
+              ease: "power(10)",
             });
         });
       });

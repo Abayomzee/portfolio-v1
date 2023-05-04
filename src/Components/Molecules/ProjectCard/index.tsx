@@ -10,30 +10,6 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
   // Props
   const { col } = props;
 
-  // // Refs
-  // let colref: any = useRef(null);
-
-  // // Selectors
-  // const column = document.querySelector(".prjc-column");
-  // const name = ".prjc-name";
-
-  // // Effects
-  // useLayoutEffect(() => {
-  //   const ctx = gsap.context(() => {
-  //     colref.current = gsap.timeline({ paused: true }).to(name, {
-  //       opacity: 0,
-  //       y: -50,
-  //     });
-
-  //     // Event listener
-  //     column?.addEventListener("mousemove", () => {
-  //       colref.current.play();
-  //     });
-  //   });
-
-  //   return () => ctx.revert();
-  // }, []);
-
   // Data to render
   return (
     <a
@@ -47,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
       {/* <div></div> */}
       <div className="prjc-column" data-column-no={col.col}>
         {/* <div className="prjc-column__top"> */}
-          {/* <Typography as="h2" className="hd-5 text-right" text="Stevia" /> */}
+        {/* <Typography as="h2" className="hd-5 text-right" text="Stevia" /> */}
         {/* </div> */}
         <div className="prjc-column-bottom">
           <div className="prjc-name-and-tools">
@@ -62,7 +38,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
               </div> */}
             <Typography
               as="h2"
-              className="hd-5 text-right prjc-name cursor-effect"
+              className={`hd-5 text-right prjc-name cursor-effect prjc-name-${col.col}`}
               text={col.name}
             />
             {/* <Typography
