@@ -11,7 +11,6 @@ const useDemoAnimation = () => {
   // Refs
   let tl = useRef();
   let prjTl = useRef();
-  let cardRef = useRef();
 
   // Selectors
   const topNav = ".tn";

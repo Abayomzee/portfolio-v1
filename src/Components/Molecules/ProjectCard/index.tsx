@@ -1,6 +1,5 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React from "react";
 import Typography from "Components/Atom/Typography";
-import gsap from "gsap";
 import "./style.css";
 
 interface ProjectCardProps {
