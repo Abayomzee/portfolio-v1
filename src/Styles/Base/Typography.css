@@ -37,6 +37,7 @@ body {
 .hd-5 {
   font-weight: 700;
   font-size: 8rem;
+  font-size: clamp(3.2rem, 4.5vw, 8rem);
   line-height: 100%;
   color: var(--color-primary);
 }

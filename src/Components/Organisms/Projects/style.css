@@ -36,6 +36,11 @@
   align-items: center;
   position: relative;
 }
+@media only screen and (max-width: 85rem) {
+  .prj-nav {
+    flex-direction: column;
+  }
+}
 
 .prj-scroll-indicator {
   width: 5rem;

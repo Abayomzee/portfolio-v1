@@ -68,9 +68,7 @@
   align-content: center;
   justify-content: space-between;
   gap: 4rem;
-
   overflow: hidden;
-  /* background-color: red; */
 }
 @media only screen and (max-width: 47.5rem) {
   .tn-contact-list {
@@ -79,8 +77,6 @@
 }
 
 .tn-contact-option {
-  /* opacity: 0;
-  transform: translateY(-2rem); */
   opacity: 1;
   display: flex;
   flex-direction: column;
@@ -92,7 +88,4 @@
   align-self: center;
   text-decoration: none;
   visibility: hidden;
-
-  /* background-color: red;
-  color: green; */
 }
