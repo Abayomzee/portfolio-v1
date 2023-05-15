@@ -13,13 +13,39 @@ const Projects: React.FC<TopNavProps> = () => {
       stacks: "REACT JS, FRAMER MOTION",
       col: "1",
       url: "https://www.steviapro.com",
+      description: "A Skill Learning platform",
     },
-    { name: "NodCredit", stacks: "HTML, CSS, JAVASCRIPT", col: "2" },
-    { name: "Todo", stacks: "REACT JS", col: "3" },
-    { name: "Metacare", stacks: "REACT JS, FRAMER MOTION", col: "4" },
-    { name: "Qstore", stacks: "REACT JS, FRAMER MOTION", col: "5" },
-    { name: "NodTransfer", stacks: "HTML, CSS, JAVASCRIPT", col: "6" },
-    { name: "Afriglobal", stacks: "HTML, CSS, JAVASCRIPT", col: "7" },
+    {
+      name: "NodCredit",
+      stacks: "HTML, CSS, JAVASCRIPT",
+      col: "2",
+      description: "A Quick Credit borrowing app",
+    },
+    { name: "TaskMgt", stacks: "REACT JS", col: "3", description: "A nice template for todo app" },
+    {
+      name: "Metacare",
+      stacks: "REACT JS, FRAMER MOTION",
+      col: "4",
+      description: "A template for simple analytics",
+    },
+    {
+      name: "Qstore",
+      stacks: "REACT JS, FRAMER MOTION",
+      col: "5",
+      description: "",
+    },
+    {
+      name: "NodTransfer",
+      stacks: "HTML, CSS, JAVASCRIPT",
+      col: "6",
+      description: "",
+    },
+    {
+      name: "Dapp exchange",
+      stacks: "HTML, CSS, JAVASCRIPT",
+      col: "7",
+      description: "A cryptocurrency exchange",
+    },
   ];
 
   // Data to render

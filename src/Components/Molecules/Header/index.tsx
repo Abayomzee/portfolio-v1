@@ -75,7 +75,7 @@ const Header: React.FC<TopNavProps> = () => {
               {/* Sub Heading */}
               <Typography
                 as="h6"
-                className="prg-1 hd-sub-heading-text mt-20 max-width-1252 cursor-effect small"
+                className="prg-1 hd-sub-heading-text mt-20 cursor-effect small"
               >
                 Hello 👋, My name is Abayomi. I am a collaborative and creative
                 front-end engineer. I have over half a decade years of
@@ -84,20 +84,14 @@ const Header: React.FC<TopNavProps> = () => {
               </Typography>
             </div>
 
-            <div className="hd-project-slider">
-              {/* <div className="hd-project-slider-overlay"></div> */}
-              {/* <video
-                src="/assets/videos/header-vid.mp4"
-                className="hd-header-vid"
-                autoPlay
-                muted
-                loop
-              ></video> */}
-              <img
-                src="/assets/images/header-pic.png"
-                alt="project"
-                className="hd-project-img"
-              />
+            <div>
+              <div className="hd-project-slider">
+                <img
+                  src="/assets/images/header-pic.png"
+                  alt="project"
+                  className="hd-project-img"
+                />
+              </div>
             </div>
           </div>
         </div>

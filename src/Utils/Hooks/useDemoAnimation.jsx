@@ -213,43 +213,23 @@ const useDemoAnimation = () => {
       });
       // Cursor effect ----------------------------------------
 
-      // Project cards
+      // Project cards ----------------------------------------
 
       const cards = document.querySelectorAll(".prjc-column");
-      cards.forEach((card, index) => {
+      cards.forEach((card) => {
         const cc = card.querySelector(".prjc-name");
-        const ccAfter = cssRule.getRule(`.prjc-name-${index + 1}::after`);
 
-        card.addEventListener("mousemove", () => {
-          gsap
-            .timeline()
-            .to(cc, {
-              top: "-100%",
-              duration: 1,
-              ease: "power(10)",
-            })
-            .to(ccAfter, {
-              top: 0,
-              duration: 1,
-              ease: "power(10)",
-            });
+        const tl = gsap.timeline({ paused: true });
+        tl.to(cc, {
+          duration: 0.7,
+          backgroundImage:
+            "linear-gradient( to top, var(--bottom) 0%, var(--bottom) 100%, var(--top) 100%)",
         });
-        card.addEventListener("mouseleave", () => {
-          gsap
-            .timeline()
-            .to(cc, {
-              top: 0,
-              duration: 1,
-              ease: "power(10)",
-            })
-            .to(ccAfter, {
-              top: "100%",
-              duration: 1,
-              ease: "power(10)",
-            });
-        });
+
+        card.addEventListener("mouseenter", () => tl.play());
+        card.addEventListener("mouseleave", () => tl.reverse());
       });
-      // Project cards --------------------------------------
+      // Project cards end --------------------------------------
 
       // Footer animation
       gsap.from('[data-animate="footer-child"]', {

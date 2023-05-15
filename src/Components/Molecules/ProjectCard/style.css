@@ -37,10 +37,14 @@
   justify-content: space-between;
 }
 
+/* .prjc-column:hover .prjc-name {
+  color: rgb(143, 140, 2);
+} */
+
 .prjc-column::before {
   position: absolute;
   top: 2rem;
-  right: 2rem;
+  right: 1rem;
   font-weight: 700;
   font-family: var(--font-1);
   font-size: 10rem;
@@ -51,7 +55,7 @@
 .prjc-column-bottom {
   display: flex;
   margin-top: 20rem;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .prjc-name-and-tools {
@@ -66,17 +70,37 @@
   display: inline-block;
   margin-left: auto;
   position: relative;
+
+  background-image: linear-gradient(
+    to top,
+    var(--bottom) 0%,
+    var(--bottom) 0%,
+    var(--top) 0%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+/* .prjc-name::before {
+  position: absolute;
+  content: 'STevia';
+  left: 0;
+  top: -2rem;
+  color: red;
+} */
 
 .prjc-name::after {
   position: absolute;
-  top: 100%;
+  bottom: 110%;
   right: 0;
 
-  font-weight: 700;
-  font-size: 8rem;
+  font-weight: 300;
+  font-size: 1.2rem;
   line-height: 100%;
-  color: rgb(202, 199, 0);
+  color: var(--color-primary);
+  -webkit-text-fill-color: var(--color-primary);
+  text-transform: uppercase;
 }
 
 .prjc-tools {
@@ -138,16 +162,16 @@
 
 /* Coulmn number */
 [data-column-no="1"] .prjc-name::after {
-  content: "Stevia";
+  content: "An online Learning platform";
 }
 [data-column-no="2"] .prjc-name::after {
   content: "NodCredit";
 }
 [data-column-no="3"] .prjc-name::after {
-  content: "Todo";
+  content: "Task management template";
 }
 [data-column-no="4"] .prjc-name::after {
-  content: "Metacare";
+  content: "analytical template";
 }
 [data-column-no="5"] .prjc-name::after {
   content: "Qstore";
@@ -156,5 +180,5 @@
   content: "NodTransfer";
 }
 [data-column-no="7"] .prjc-name::after {
-  content: "Afriglobal";
+  content: "Dapp Exchange";
 }

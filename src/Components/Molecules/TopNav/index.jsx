@@ -39,11 +39,15 @@ const TopNav = () => {
     const ctx = gsap.context(() => {
       // Gsap
       tl.current = gsap.timeline({ paused: true }).from(".tn-contact-option", {
-        y: -20,
+        x: 10,
         opacity: 0,
         autoAlpha: 0,
-        duration: 0.8,
-        stagger: 0.1,
+        duration: 0.6,
+        // ease: "back.in",
+        stagger: {
+          each: 0.1,
+          from: "end",
+        },
       });
     });
 
@@ -95,7 +99,7 @@ const TopNav = () => {
                   href="mailto:okegbenroabayo@gmail.com"
                   rel="noreferrer"
                   target={"_blank"}
-                  className="tn-contact-option"
+                  className="tn-contact-option cursor-effect small"
                 >
                   <EmailIcon />
                   <Typography as="span" className="prg-6" text={`Email`} />
@@ -104,7 +108,7 @@ const TopNav = () => {
                   href="https://www.linkedin.com/in/okegbenro-abayomi-554952b3/"
                   rel="noreferrer"
                   target={"_blank"}
-                  className="tn-contact-option"
+                  className="tn-contact-option cursor-effect small"
                 >
                   <LinkedInIcon />
                   <Typography as="span" className="prg-6" text={`linkedin`} />
@@ -113,7 +117,7 @@ const TopNav = () => {
                   href="https://www.instagram.com/abayomi.dev/"
                   rel="noreferrer"
                   target={"_blank"}
-                  className="tn-contact-option"
+                  className="tn-contact-option cursor-effect small"
                 >
                   <InstagramIcon />
                   <Typography as="span" className="prg-6" text={`Instagram`} />
@@ -122,7 +126,7 @@ const TopNav = () => {
                   href="https://github.com/Abayomzee"
                   rel="noreferrer"
                   target={"_blank"}
-                  className="tn-contact-option"
+                  className="tn-contact-option cursor-effect small"
                 >
                   <GithubIcon />
                   <Typography as="span" className="prg-6" text={`Github`} />
@@ -131,7 +135,7 @@ const TopNav = () => {
                   href="https://twitter.com/Abayomzee"
                   rel="noreferrer"
                   target={"_blank"}
-                  className="tn-contact-option"
+                  className="tn-contact-option cursor-effect small"
                 >
                   <TwitterIcon />
                   <Typography as="span" className="prg-6" text={`Twitter`} />
