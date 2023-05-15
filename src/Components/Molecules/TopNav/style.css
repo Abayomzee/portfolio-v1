@@ -14,8 +14,8 @@
 
   .tn-wrapper {
     flex-direction: column;
-    align-items: end;
     gap: 4rem;
+    align-items: end;
   }
 }
 
