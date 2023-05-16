@@ -92,7 +92,7 @@
 
 .prjc-name::after {
   position: absolute;
-  bottom: 110%;
+  bottom: 105%;
   right: 0;
 
   font-weight: 300;
@@ -162,10 +162,10 @@
 
 /* Coulmn number */
 [data-column-no="1"] .prjc-name::after {
-  content: "An online Learning platform";
+  content: "Learning platform";
 }
 [data-column-no="2"] .prjc-name::after {
-  content: "NodCredit";
+  content: "Quick credit platform";
 }
 [data-column-no="3"] .prjc-name::after {
   content: "Task management template";

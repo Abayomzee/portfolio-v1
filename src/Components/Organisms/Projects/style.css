@@ -36,11 +36,6 @@
   align-items: center;
   position: relative;
 }
-@media only screen and (max-width: 85rem) {
-  .prj-nav {
-    flex-direction: column;
-  }
-}
 
 .prj-scroll-indicator {
   width: 5rem;
@@ -61,6 +56,11 @@
   display: flex;
   position: relative;
 }
+@media only screen and (max-width: 85rem) {
+  .prj-row {
+    flex-direction: column;
+  }
+}
 
 .prj-row::after {
   position: absolute;
@@ -70,4 +70,9 @@
   width: 100%;
   top: 150%;
   left: 0;
+}
+@media only screen and (max-width: 85rem) {
+  .prj-row {
+    flex-direction: column;
+  }
 }
