@@ -6,7 +6,7 @@ import ProjectCard from "Components/Molecules/ProjectCard";
 
 interface TopNavProps {}
 const Projects: React.FC<TopNavProps> = () => {
-  // Variable
+  // Variables
   const data = [
     {
       name: "Stevia",
