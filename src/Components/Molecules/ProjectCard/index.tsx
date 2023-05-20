@@ -9,7 +9,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
   // Props
   const { col } = props;
 
-  // Data to renderr
+  // Data to renderrr
   return (
     <a
       href={col.url ? col.url : "#"}
