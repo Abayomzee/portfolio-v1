@@ -68,6 +68,7 @@ const useDemoAnimation = () => {
         ".prjc-column:not(:last-child)::after"
       );
       let prjRowsAfter = cssRule.getRule(".prj-row::after");
+      let prjcnameAfter = cssRule.getRule(".prjc-name::after");
       // let prjCardBefore = cssRule.getRule(".prjc-column__right::before");
 
       // Texts animation
