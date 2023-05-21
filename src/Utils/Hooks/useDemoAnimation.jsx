@@ -82,6 +82,7 @@ const useDemoAnimation = () => {
       gsap.set(prjCardsAfter, { height: "0" });
       gsap.set(projectsScrollDownArrow, { y: "-30", opacity: 0 });
       gsap.set(prjRowsAfter, { top: "120%" });
+      gsap.set(prjcnameAfter, { bottom: "80%", opacity: 0 });
       // gsap.set(prjCardBefore, { opacity: 0 });
       gsap.set(projectCardName, { opacity: 0, y: "100" });
       // gsap.set(projectCardTools, { opacity: 0, y: "60" });
@@ -158,7 +159,8 @@ const useDemoAnimation = () => {
         )
         .to(prjRowsAfter, { top: "100%", duration: 0.9, stagger: 0.1 }, "<")
         .to(prjCardsAfter, { height: "100%", duration: 1 }, "<")
-        .to(projectCardName, { y: "0", opacity: 1, duration: 0.6 }, "<=+0.6");
+        .to(projectCardName, { y: "0", opacity: 1, duration: 0.6 }, "<=+0.6")
+        .to(prjcnameAfter, { bottom: "105%", opacity: 1, duration: 0.6 });
       // .to(projectCardTools, { y: "0", opacity: 1, duration: 0.6 }, "<=+0.4");
 
       scrollTrigger.create({

@@ -162,7 +162,7 @@
 
 /* Coulmn number */
 [data-column-no="1"] .prjc-name::after {
-  content: "Learning platform";
+  content: "E-Learning platform";
 }
 [data-column-no="2"] .prjc-name::after {
   content: "Quick credit platform";
@@ -180,5 +180,5 @@
   content: "NodTransfer";
 }
 [data-column-no="7"] .prjc-name::after {
-  content: "Dapp Exchange";
+  content: "Crypto Exchange";
 }
