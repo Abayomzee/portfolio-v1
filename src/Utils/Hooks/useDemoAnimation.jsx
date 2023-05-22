@@ -167,7 +167,7 @@ const useDemoAnimation = () => {
         start: "top 60%",
         toggleActions: "play none none reverse",
         animation: prjTl.current,
-        markers: true,
+        markers: false,
         scroller: ".scroll-handler",
       });
 
@@ -242,7 +242,7 @@ const useDemoAnimation = () => {
         stagger: 0.1,
         scrollTrigger: {
           trigger: '[data-animate="footer-section"]',
-          markers: true,
+          markers: false,
           start: "top 75%",
           end: "bottom 90%",
           toggleActions: "restart none none reverse",
