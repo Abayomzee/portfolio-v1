@@ -83,7 +83,6 @@ const useDemoAnimation = () => {
       gsap.set(projectsScrollDownArrow, { y: "-30", opacity: 0 });
       gsap.set(prjRowsAfter, { top: "120%" });
       gsap.set(prjcnameAfter, { bottom: "80%", opacity: 0 });
-      // gsap.set(prjCardBefore, { opacity: 0 });
       gsap.set(projectCardName, { opacity: 0, y: "100" });
       // gsap.set(projectCardTools, { opacity: 0, y: "60" });
 
