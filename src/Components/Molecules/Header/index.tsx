@@ -87,7 +87,7 @@ const Header: React.FC<TopNavProps> = () => {
             <div>
               <div className="hd-project-slider">
                 <img
-                  src="/assets/images/header-pic.png"
+                  src="/assets/images/header-pic.webp"
                   alt="project"
                   className="hd-project-img"
                 />
