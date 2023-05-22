@@ -18,12 +18,6 @@ const Footer: React.FC<FooterProps> = () => {
         text={`I’m currently available to new opportunities. Feel free to reach out`}
         dataAnimate="footer-child"
       />
-      {/* <Typography
-        as="h2"
-        className="hd-6 text-center mt-40 my-email"
-        text={`Okegbenroabayo@gmail.com`}
-        dataAnimate="footer-child"
-      /> */}
 
       <a
         href="mailto:Okegbenroabayo@gmail.com"

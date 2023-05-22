@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
           <div className="prjc-name-and-tools">
             <Typography
               as="h2"
-              className={`hd-5 text-right prjc-name cursor-effect prjc-name-${col.col}`}
+              className={`hd-5 prjc-name cursor-effect prjc-name-${col.col}`}
               text={col.name}
             />
           </div>

@@ -7,7 +7,8 @@
   justify-content: space-between;
   align-items: center;
 }
-@media only screen and (max-width: 58.5rem) {
+@media only screen and (max-width: 36.56em) {
+  /* 585px */
   .tn {
     padding: 3.5rem 0;
   }
@@ -24,15 +25,20 @@
   align-items: center;
   gap: 25rem;
 }
-@media only screen and (max-width: 74.9rem) {
+@media only screen and (max-width: 46.81em) {
+  /* 749px */
   .tn-left {
     gap: 10rem;
   }
 }
-@media only screen and (max-width: 58.5rem) {
+@media only screen and (max-width: 36.56em) {
+  /* 585px */
   .tn-left {
     width: 100%;
     justify-content: space-between;
+  }
+  .tn-wrapper {
+    width: 100%;
   }
 }
 
@@ -70,7 +76,8 @@
   gap: 4rem;
   overflow: hidden;
 }
-@media only screen and (max-width: 47.5rem) {
+@media only screen and (max-width: 29.68em) {
+  /* 475px */
   .tn-contact-list {
     gap: 1.5rem;
   }

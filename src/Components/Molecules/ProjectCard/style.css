@@ -13,11 +13,21 @@
   position: absolute;
   content: "";
   width: var(--prj-line-size);
-  background-color: red;
+  /* background-color: red; */
   background-color: var(--color-2);
   height: 100%;
   left: 100%;
   bottom: 0;
+}
+
+@media only screen and (max-width: 53.13em) {
+  /* 850px */
+  .prjc-column:not(:last-child)::after {
+    background-color: transparent;
+  }
+  .prjc-column:not(:last-child) {
+    border-bottom: var(--color-2);
+  }
 }
 
 .prjc-column:first-child {
@@ -37,9 +47,12 @@
   justify-content: space-between;
 }
 
-/* .prjc-column:hover .prjc-name {
-  color: rgb(143, 140, 2);
-} */
+@media only screen and (max-width: 53.13em) {
+  /* 850px */
+  div.prjc-column {
+    border-bottom: 0.1rem solid var(--color-2);
+  }
+}
 
 .prjc-column::before {
   position: absolute;
@@ -55,7 +68,12 @@
 .prjc-column-bottom {
   display: flex;
   margin-top: 20rem;
-  /* overflow: hidden; */
+}
+@media only screen and (max-width: 66.88em) {
+  /* 1070px */
+  .prjc-column-bottom {
+    margin-top: 15rem;
+  }
 }
 
 .prjc-name-and-tools {
@@ -70,6 +88,7 @@
   display: inline-block;
   margin-left: auto;
   position: relative;
+  /* text-align: right; */
 
   background-image: linear-gradient(
     to top,
@@ -82,14 +101,6 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* .prjc-name::before {
-  position: absolute;
-  content: 'STevia';
-  left: 0;
-  top: -2rem;
-  color: red;
-} */
-
 .prjc-name::after {
   position: absolute;
   bottom: 105%;
@@ -101,6 +112,18 @@
   color: var(--color-primary);
   -webkit-text-fill-color: var(--color-primary);
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 53.13em) {
+  /* 850px */
+  .prjc-name {
+    text-align: left;
+    margin-left: 0;
+  }
+  .prjc-name::after {
+    left: 0;
+    right: auto;
+  }
 }
 
 .prjc-tools {

@@ -52,14 +52,8 @@
 }
 
 .prj-row {
-  /* border-bottom: var(--prj-line-size) solid var(--color-2); */
   display: flex;
   position: relative;
-}
-@media only screen and (max-width: 85rem) {
-  .prj-row {
-    flex-direction: column;
-  }
 }
 
 .prj-row::after {
@@ -71,8 +65,15 @@
   top: 150%;
   left: 0;
 }
-@media only screen and (max-width: 85rem) {
+
+@media only screen and (max-width: 53.13em) {
+  /* 850px */
   .prj-row {
     flex-direction: column;
+    border-bottom: none;
+  }
+
+  .prj-row::after {
+    background-color: transparent;
   }
 }
