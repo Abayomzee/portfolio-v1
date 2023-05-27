@@ -216,7 +216,6 @@ const useDemoAnimation = () => {
       // Cursor effect ----------------------------------------
 
       // Project cards ----------------------------------------
-
       const cards = document.querySelectorAll(".prjc-column");
       cards.forEach((card) => {
         const cc = card.querySelector(".prjc-name");
