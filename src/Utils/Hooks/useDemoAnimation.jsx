@@ -11,6 +11,7 @@ const useDemoAnimation = () => {
   // Refs
   let tl = useRef();
   let prjTl = useRef();
+  let prjcTl = useRef();
 
   // Selectors
   const topNav = ".tn";
@@ -23,9 +24,11 @@ const useDemoAnimation = () => {
   const headerSubHeading = ".hd-sub-heading-text";
 
   const projectsSection = ".prj";
+  // const projectsSectionRows = ".prj-row";
+  // const projectsCards = ".prjc-column";
   const projectsScrollDownIndicator = ".prj-scroll-indicator";
   const projectsScrollDownArrow = ".prj-scroll-arrow";
-  const projectCardName = ".prjc-name-and-tools";
+  // const projectCardName = ".prjc-name-and-tools";
   // const projectCardName = ".prjc-name";
   // const projectCardTools = ".prjc-tools";
 
@@ -68,7 +71,7 @@ const useDemoAnimation = () => {
         ".prjc-column:not(:last-child)::after"
       );
       let prjRowsAfter = cssRule.getRule(".prj-row::after");
-      let prjcnameAfter = cssRule.getRule(".prjc-name::after");
+      // let prjcnameAfter = cssRule.getRule(".prjc-name::after");
       // let prjCardBefore = cssRule.getRule(".prjc-column__right::before");
 
       // Texts animation
@@ -82,8 +85,8 @@ const useDemoAnimation = () => {
       gsap.set(prjCardsAfter, { height: "0" });
       gsap.set(projectsScrollDownArrow, { y: "-30", opacity: 0 });
       gsap.set(prjRowsAfter, { top: "120%" });
-      gsap.set(prjcnameAfter, { bottom: "80%", opacity: 0 });
-      gsap.set(projectCardName, { opacity: 0, y: "100" });
+      // gsap.set(prjcnameAfter, { bottom: "80%", opacity: 0 });
+      // gsap.set(projectCardName, { opacity: 0, y: "100" });
       // gsap.set(projectCardTools, { opacity: 0, y: "60" });
 
       tl.current = gsap
@@ -157,9 +160,8 @@ const useDemoAnimation = () => {
           "<"
         )
         .to(prjRowsAfter, { top: "100%", duration: 0.9, stagger: 0.1 }, "<")
-        .to(prjCardsAfter, { height: "100%", duration: 1 }, "<")
-        .to(projectCardName, { y: "0", opacity: 1, duration: 0.6 }, "<=+0.6")
-        .to(prjcnameAfter, { bottom: "105%", opacity: 1, duration: 0.6 });
+        .to(prjCardsAfter, { height: "100%", duration: 1 }, "<");
+
       // .to(projectCardTools, { y: "0", opacity: 1, duration: 0.6 }, "<=+0.4");
 
       scrollTrigger.create({
@@ -170,6 +172,20 @@ const useDemoAnimation = () => {
         markers: false,
         scroller: ".scroll-handler",
       });
+
+      // prjcTl.current = gsap
+      //   .timeline()
+      //   .to(projectCardName, { y: "0", opacity: 1, duration: 0.6 }, "<=+0.6")
+      //   .to(prjcnameAfter, { bottom: "105%", opacity: 1, duration: 0.6 });
+
+      // scrollTrigger.create({
+      //   trigger: projectsCards,
+      //   start: "top 60%",
+      //   toggleActions: "restart none none reverse",
+      //   animation: prjcTl.current,
+      //   markers: false,
+      //   scroller: ".scroll-handler",
+      // });
 
       // Cursor
       // Cursor effect
@@ -219,7 +235,26 @@ const useDemoAnimation = () => {
       const cards = document.querySelectorAll(".prjc-column");
       cards.forEach((card) => {
         const cc = card.querySelector(".prjc-name");
+        const ccAfter = cssRule.getRule(".prjc-name::after");
+        gsap.set(cc, { opacity: 0, y: "100" });
+        gsap.set(ccAfter, { bottom: "80%", opacity: 0 });
 
+        // Entrance anim
+        prjcTl.current = gsap
+          .timeline()
+          .to(cc, { y: "0", opacity: 1, duration: 0.6 })
+          .to(ccAfter, { bottom: "105%", opacity: 1, duration: 0.6 });
+
+        scrollTrigger.create({
+          trigger: card,
+          start: "top 70%",
+          toggleActions: "restart none none reverse",
+          animation: prjcTl.current,
+          markers: true,
+          scroller: ".scroll-handler",
+        });
+
+        // Hover anim
         const tl = gsap.timeline({ paused: true });
         tl.to(cc, {
           duration: 0.7,
@@ -230,6 +265,7 @@ const useDemoAnimation = () => {
         card.addEventListener("mouseenter", () => tl.play());
         card.addEventListener("mouseleave", () => tl.reverse());
       });
+
       // Project cards end --------------------------------------
 
       // Footer animation
