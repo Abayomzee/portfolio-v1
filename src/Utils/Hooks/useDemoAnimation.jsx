@@ -235,7 +235,11 @@ const useDemoAnimation = () => {
       const cards = document.querySelectorAll(".prjc-column");
       cards.forEach((card) => {
         const cc = card.querySelector(".prjc-name");
+
+        const cccAfter = cssRule.getRule("div.prjc-column::after");
         const ccAfter = cssRule.getRule(".prjc-name::after");
+
+        gsap.set(cccAfter, { top: "120%" });
         gsap.set(cc, { opacity: 0, y: "100" });
         gsap.set(ccAfter, { bottom: "80%", opacity: 0 });
 
@@ -243,14 +247,15 @@ const useDemoAnimation = () => {
         prjcTl.current = gsap
           .timeline()
           .to(cc, { y: "0", opacity: 1, duration: 0.6 })
-          .to(ccAfter, { bottom: "105%", opacity: 1, duration: 0.6 });
+          .to(ccAfter, { bottom: "105%", opacity: 1, duration: 0.6 })
+          .to(cccAfter, { top: "100%", duration: 0.6, stagger: 0.1 }, "<0");
 
         scrollTrigger.create({
           trigger: card,
           start: "top 70%",
           toggleActions: "restart none none reverse",
           animation: prjcTl.current,
-          markers: true,
+          markers: false,
           scroller: ".scroll-handler",
         });
 
