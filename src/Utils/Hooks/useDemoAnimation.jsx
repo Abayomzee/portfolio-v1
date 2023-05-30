@@ -174,7 +174,6 @@ const useDemoAnimation = () => {
       });
 
       // prjcTl.current = gsap
-      
       //   .timeline()
       //   .to(projectCardName, { y: "0", opacity: 1, duration: 0.6 }, "<=+0.6")
       //   .to(prjcnameAfter, { bottom: "105%", opacity: 1, duration: 0.6 });
