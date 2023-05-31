@@ -15,10 +15,13 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
       href={col.url ? col.url : "#"}
       rel="noreferrer"
       target="_blank"
-      className="prjc-column"
+      className={`prjc-column`}
       // ref={colref}
     >
-      <div className="prjc-column" data-column-no={col.col}>
+      <div
+        className={`prjc-column prjc-column-${col.col}`}
+        data-column-no={col.col}
+      >
         <div className="prjc-column-bottom">
           <div className="prjc-name-and-tools">
             <Typography

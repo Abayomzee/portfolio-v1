@@ -177,7 +177,6 @@ const useDemoAnimation = () => {
       //   .timeline()
       //   .to(projectCardName, { y: "0", opacity: 1, duration: 0.6 }, "<=+0.6")
       //   .to(prjcnameAfter, { bottom: "105%", opacity: 1, duration: 0.6 });
-
       // scrollTrigger.create({
       //   trigger: projectsCards,
       //   start: "top 60%",
@@ -233,13 +232,16 @@ const useDemoAnimation = () => {
 
       // Project cards ----------------------------------------
       const cards = document.querySelectorAll(".prjc-column");
-      cards.forEach((card) => {
+      cards.forEach((card, index) => {
         const cc = card.querySelector(".prjc-name");
 
-        const cccAfter = cssRule.getRule("div.prjc-column::after");
+        const cccAfter = cssRule.getRule(`.prjc-column-${index + 1}::after`);
         const ccAfter = cssRule.getRule(".prjc-name::after");
+        // const ccAfter = cssRule.getRule(
+        //   `div.prjc-column-${index + 1} .prjc-name::after`
+        // );
 
-        gsap.set(cccAfter, { top: "120%" });
+        gsap.set(cccAfter, { top: "120%", opacity: 0 });
         gsap.set(cc, { opacity: 0, y: "100" });
         gsap.set(ccAfter, { bottom: "80%", opacity: 0 });
 
@@ -248,7 +250,7 @@ const useDemoAnimation = () => {
           .timeline()
           .to(cc, { y: "0", opacity: 1, duration: 0.6 })
           .to(ccAfter, { bottom: "105%", opacity: 1, duration: 0.6 })
-          .to(cccAfter, { top: "100%", duration: 0.6, stagger: 0.1 }, "<0");
+          .to(cccAfter, { top: "100%", opacity: 1, duration: 0.6 }, "<0");
 
         scrollTrigger.create({
           trigger: card,
