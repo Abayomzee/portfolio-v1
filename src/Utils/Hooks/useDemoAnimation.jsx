@@ -234,12 +234,9 @@ const useDemoAnimation = () => {
       const cards = document.querySelectorAll(".prjc-column");
       cards.forEach((card, index) => {
         const cc = card.querySelector(".prjc-name");
-
         const cccAfter = cssRule.getRule(`.prjc-column-${index + 1}::after`);
         const ccAfter = cssRule.getRule(".prjc-name::after");
-        // const ccAfter = cssRule.getRule(
-        //   `div.prjc-column-${index + 1} .prjc-name::after`
-        // );
+       
 
         gsap.set(cccAfter, { top: "120%", opacity: 0 });
         gsap.set(cc, { opacity: 0, y: "100" });
