@@ -48,8 +48,6 @@
 }
 
 div.prjc-column::after {
-  /* border-bottom: 0.1rem solid var(--color-2); */
-
   position: absolute;
   content: "";
   top: 100%;

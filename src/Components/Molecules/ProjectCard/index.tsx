@@ -19,7 +19,8 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
       // ref={colref}
     >
       <div
-        className={`prjc-column prjc-column-${col.col}`}
+        className={`prjc-column`}
+        id={`prjc-column-${col.col}`}
         data-column-no={col.col}
       >
         <div className="prjc-column-bottom">
