@@ -46,6 +46,7 @@ const useDemoAnimation = () => {
         },
         tablet: {
           smooth: true,
+          breakpoint: 0,
         },
       });
 
