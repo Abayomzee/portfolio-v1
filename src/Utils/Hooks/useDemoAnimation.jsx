@@ -41,6 +41,12 @@ const useDemoAnimation = () => {
         smooth: true,
         multiplier: 0.7,
         // inertia: 0.3,
+        mobile: {
+          smooth: true,
+        },
+        tablet: {
+          smooth: true,
+        },
       });
 
       locoScroll.on("scroll", scrollTrigger.update);
@@ -248,8 +254,8 @@ const useDemoAnimation = () => {
         prjcTl.current = gsap
           .timeline()
           .to(cc, { y: "0", opacity: 1, duration: 0.6 })
-          .to(cccAfter, { bottom: "0", opacity: 1, duration: 0.6 }, '<0.3')
-          .to(ccAfter, { y: "0", opacity: 1, duration: 0.6 }, "<0.3")
+          .to(cccAfter, { bottom: "0", opacity: 1, duration: 0.6 }, "<0.3")
+          .to(ccAfter, { y: "0", opacity: 1, duration: 0.6 }, "<0.3");
 
         scrollTrigger.create({
           trigger: card,
