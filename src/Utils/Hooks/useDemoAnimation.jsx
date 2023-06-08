@@ -231,22 +231,25 @@ const useDemoAnimation = () => {
       // Cursor effect ----------------------------------------
 
       // Project cards ----------------------------------------
-      const cards = document.querySelectorAll(".prjc-column");
+      const cards = document.querySelectorAll("div.prjc-column");
       cards.forEach((card, index) => {
         const cc = card.querySelector(".prjc-name");
-        const cccAfter = cssRule.getRule(`div#prjc-column-1::after`);
-        const ccAfter = cssRule.getRule(".prjc-name::after");
+        const cccAfter = card.querySelector(`.mobile-bottom-line`);
+        const ccAfter = card.querySelector(`#prjc-description-${index + 1}`);
 
-        gsap.set(cccAfter, { top: "120%", opacity: 0, backgroundColor: "red" });
+        gsap.set(cccAfter, {
+          bottom: "-10px",
+          opacity: 0,
+        });
         gsap.set(cc, { opacity: 0, y: "100" });
-        gsap.set(ccAfter, { bottom: "90%", opacity: 0 });
+        gsap.set(ccAfter, { y: "10px", opacity: 0 });
 
         // Entrance anim
         prjcTl.current = gsap
           .timeline()
           .to(cc, { y: "0", opacity: 1, duration: 0.6 })
-          .to(ccAfter, { bottom: "105%", opacity: 1, duration: 0.6 })
-          .to(cccAfter, { top: "100%", opacity: 1, duration: 0.6 });
+          .to(cccAfter, { bottom: "0", opacity: 1, duration: 0.6 }, '<0.3')
+          .to(ccAfter, { y: "0", opacity: 1, duration: 0.6 }, "<0.3")
 
         scrollTrigger.create({
           trigger: card,

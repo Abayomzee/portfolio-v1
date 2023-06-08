@@ -48,7 +48,7 @@ const Projects: React.FC<TopNavProps> = () => {
       stacks: "HTML, CSS, JAVASCRIPT",
       col: "6",
       url: "https://www.steviapro.com",
-      description: "",
+      description: "An online bookstore app",
     },
     {
       name: "Dapp exchange",

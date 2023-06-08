@@ -16,7 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
       rel="noreferrer"
       target="_blank"
       className={`prjc-column`}
-      // ref={colref}
+      // ref={colref} 
     >
       <div
         className={`prjc-column`}
@@ -26,12 +26,20 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
         <div className="prjc-column-bottom">
           <div className="prjc-name-and-tools">
             <Typography
+              as="span"
+              className={`prjc-description cursor-effect`}
+              id={`prjc-description-${col.col}`}
+              text={col.description}
+            />
+            <Typography
               as="h2"
               className={`hd-5 prjc-name cursor-effect prjc-name-${col.col}`}
+              id={`prjc-name-${col.col}`}
               text={col.name}
             />
           </div>
         </div>
+        <div className="mobile-bottom-line"></div>
       </div>
     </a>
   );
