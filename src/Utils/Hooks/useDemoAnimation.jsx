@@ -41,8 +41,11 @@ const useDemoAnimation = () => {
         smooth: true,
         multiplier: 0.7,
         // inertia: 0.3,
+        mobile: {
+          smooth: true,
+        },
         tablet: {
-          breakpoint: 0,
+          smooth: true,
         },
       });
 
