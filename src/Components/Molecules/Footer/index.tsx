@@ -99,7 +99,7 @@ const Footer: React.FC<FooterProps> = () => {
 
       <Typography
         as="p"
-        className="prg-5 text-center mt-20"
+        className="prg-5 text-center mt-20 cursor-effect small"
         dataAnimate="footer-child"
       >
         Designed and Developed by <span className="color-white">ME</span>

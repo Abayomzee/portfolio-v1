@@ -41,14 +41,8 @@ const useDemoAnimation = () => {
         smooth: true,
         multiplier: 0.7,
         // inertia: 0.3,
-        mobile: {
-          smooth: true,
-          multiplier: 0.4,
-        },
         tablet: {
-          smooth: true,
           breakpoint: 0,
-          multiplier: 0.4,
         },
       });
 
@@ -250,7 +244,7 @@ const useDemoAnimation = () => {
           bottom: "-10px",
           opacity: 0,
         });
-        gsap.set(cc, { opacity: 0, y: "100" });
+        gsap.set(cc, { opacity: 0, y: "80" });
         gsap.set(ccAfter, { y: "10px", opacity: 0 });
 
         // Entrance anim

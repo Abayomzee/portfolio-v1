@@ -27,7 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (props) => {
           <div className="prjc-name-and-tools">
             <Typography
               as="span"
-              className={`prjc-description cursor-effect`}
+              className={`prjc-description cursor-effect small`}
               id={`prjc-description-${col.col}`}
               text={col.description}
             />
