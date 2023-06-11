@@ -9,8 +9,9 @@
 
   height: 100vh;
   width: 100vw;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 12rem;
   color: var(--color-white);
 }
 .prl-wrapper::-webkit-scrollbar {
