@@ -84,6 +84,15 @@ div.prjc-column::after {
   -webkit-text-stroke: 0.006rem #ffffffa1;
 }
 
+@media only screen and (max-width: 43.75em) {
+  /* 700px */
+  .prjc-column::before {
+    transform: scale(0.7);
+    top: 0;
+    right: 0;
+  }
+}
+
 .prjc-column-bottom {
   display: flex;
   margin-top: 20rem;
@@ -121,10 +130,6 @@ div.prjc-column::after {
 }
 
 .prjc-description {
-  /* position: absolute;
-  bottom: 105%;
-  right: 0; */
-
   font-weight: 300;
   font-size: 1.2rem;
   line-height: 100%;
@@ -133,20 +138,6 @@ div.prjc-column::after {
   text-transform: uppercase;
   margin-left: auto;
 }
-/* 
-.prjc-name::after {
-  position: absolute;
-  bottom: 105%;
-  right: 0;
-
-  font-weight: 300;
-  font-size: 1.2rem;
-  line-height: 100%;
-  color: var(--color-primary);
-  -webkit-text-fill-color: var(--color-primary);
-  text-transform: uppercase;
-  display: none;
-} */
 
 @media only screen and (max-width: 53.13em) {
   /* 850px */
