@@ -1,0 +1,38 @@
+.prl-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  color: var(--color-white);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-bg);
+  z-index: 4;
+}
+.prl-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.prl-progress {
+  width: 23rem;
+  height: 0.6rem;
+  border-radius: 2rem;
+  background-color: var(--color-1);
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.prl-progress::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 60%;
+  background-color: var(--color-2);
+  border-radius: 15%;
+  animation: MoveXAxis 3s linear 1s infinite both;
+}

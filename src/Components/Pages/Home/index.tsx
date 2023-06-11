@@ -4,6 +4,7 @@ import Header from "Components/Molecules/Header";
 import Projects from "Components/Organisms/Projects";
 import Footer from "Components/Molecules/Footer";
 import useDemoAnimation from "Utils/Hooks/useDemoAnimation";
+import Preloader from "Components/Atom/PreLoader";
 import "./style.css";
 
 interface Props {}
@@ -17,14 +18,17 @@ const Home: React.FC<Props> = () => {
 
   //   Data to render
   return (
-    <main>
+    <>
+      <Preloader />
       <main>
-        <TopNav />
-        <Header />
-        <Projects />
-        <Footer />
+        <main>
+          <TopNav />
+          <Header />
+          <Projects />
+          <Footer />
+        </main>
       </main>
-    </main>
+    </>
   );
 };
 

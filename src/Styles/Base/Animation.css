@@ -16,8 +16,20 @@
   }
 }
 
+@keyframes MoveXAxis {
+  0% {
+    transform: translateX(-90%);
+  }
+  50% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(-90%);
+  }
+}
+
 /* Classes */
 .animate-bounce {
-  animation: bounce 3s linear .3s infinite;
+  animation: bounce 3s linear 0.3s infinite;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
