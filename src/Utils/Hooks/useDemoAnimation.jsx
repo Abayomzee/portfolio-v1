@@ -24,13 +24,12 @@ const useDemoAnimation = () => {
   const headerSubHeading = ".hd-sub-heading-text";
 
   const projectsSection = ".prj";
-  // const projectsSectionRows = ".prj-row";
-  // const projectsCards = ".prjc-column";
   const projectsScrollDownIndicator = ".prj-scroll-indicator";
   const projectsScrollDownArrow = ".prj-scroll-arrow";
-  // const projectCardName = ".prjc-name-and-tools";
-  // const projectCardName = ".prjc-name";
-  // const projectCardTools = ".prjc-tools";
+
+  const preloaderWrapper = ".prl-wrapper";
+  const preloaderText = ".prl-text";
+  const preloaderProgress = ".prl-progress";
 
   // Effects
   useLayoutEffect(() => {
@@ -84,13 +83,10 @@ const useDemoAnimation = () => {
         ".prjc-column:not(:last-child)::after"
       );
       let prjRowsAfter = cssRule.getRule(".prj-row::after");
-      // let prjcnameAfter = cssRule.getRule(".prjc-name::after");
-      // let prjCardBefore = cssRule.getRule(".prjc-column__right::before");
 
       // Texts animation
       gsap.set(char, { yPercent: -89 });
       gsap.set(heading, { autoAlpha: 1 });
-      // gsap.set(headerImage, { opacity: 0 });
       gsap.set(headerImagePic, { scale: 1.3 });
       gsap.set(headerSubHeading, { yPercent: -85, opacity: 0 });
       gsap.set(prjHeaderBefore, { width: "0" });
@@ -98,13 +94,16 @@ const useDemoAnimation = () => {
       gsap.set(prjCardsAfter, { height: "0" });
       gsap.set(projectsScrollDownArrow, { y: "-30", opacity: 0 });
       gsap.set(prjRowsAfter, { top: "120%" });
-      // gsap.set(prjcnameAfter, { bottom: "80%", opacity: 0 });
-      // gsap.set(projectCardName, { opacity: 0, y: "100" });
-      // gsap.set(projectCardTools, { opacity: 0, y: "60" });
 
       tl.current = gsap
         .timeline()
-        .from(topNav, { opacity: 0, y: -30, duration: 0.3, ease: "linear" })
+        .from(preloaderText, { y: -10, opacity: 0 })
+        .from(preloaderProgress, { y: -10, opacity: 0 }, "<0.3")
+        .to(preloaderText, { y: -10, opacity: 0, delay: 3 })
+        .to(preloaderProgress, { y: -10, opacity: 0 }, "<0.3")
+        .to(preloaderWrapper, { y: -10, opacity: 0, display: "none" })
+
+        .from(topNav, { opacity: 0, y: -30, duration: 0.4, ease: "linear" })
         .to(
           char,
           {
@@ -177,6 +176,7 @@ const useDemoAnimation = () => {
 
       // .to(projectCardTools, { y: "0", opacity: 1, duration: 0.6 }, "<=+0.4");
 
+      // function startProjectsAnim() {
       scrollTrigger.create({
         trigger: projectsSection,
         start: "top 60%",
@@ -185,19 +185,7 @@ const useDemoAnimation = () => {
         markers: false,
         scroller: ".scroll-handler",
       });
-
-      // prjcTl.current = gsap
-      //   .timeline()
-      //   .to(projectCardName, { y: "0", opacity: 1, duration: 0.6 }, "<=+0.6")
-      //   .to(prjcnameAfter, { bottom: "105%", opacity: 1, duration: 0.6 });
-      // scrollTrigger.create({
-      //   trigger: projectsCards,
-      //   start: "top 60%",
-      //   toggleActions: "restart none none reverse",
-      //   animation: prjcTl.current,
-      //   markers: false,
-      //   scroller: ".scroll-handler",
-      // });
+      // }
 
       // Cursor
       // Cursor effect
