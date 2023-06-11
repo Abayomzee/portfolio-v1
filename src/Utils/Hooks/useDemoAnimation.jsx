@@ -34,30 +34,34 @@ const useDemoAnimation = () => {
 
   // Effects
   useLayoutEffect(() => {
+    const locoScroll = new LocomotiveScroll({
+      el: document.querySelector(".scroll-handler"),
+      smooth: true,
+      smoothMobile: true,
+      multiplier: 0.7,
+      lerp: 0.09,
+      getDirection: true,
+      // inertia: 0.3,
+      mobile: {
+        smooth: true,
+        multiplier: 0.1,
+      },
+      tablet: {
+        smooth: true,
+        breakpoint: 0,
+        multiplier: 0.1,
+      },
+    });
+
     const ctx = gsap.context(() => {
       // Scroll Animation
-      const locoScroll = new LocomotiveScroll({
-        el: document.querySelector(".scroll-handler"),
-        smooth: true,
-        multiplier: 0.7,
-        // inertia: 0.3,
-        mobile: {
-          smooth: true,
-          multiplier: 0.1,
-        },
-        tablet: {
-          smooth: true,
-          breakpoint: 0,
-          multiplier: 0.1,
-        },
-      });
 
       locoScroll.on("scroll", scrollTrigger.update);
 
       scrollTrigger.scrollerProxy(".scroll-handler", {
         scrollTop(value) {
           return arguments.length
-            ? locoScroll.scrollTo(value, 0, 0)
+            ? locoScroll.scrollTo(value, { duration: 0, disableLerp: true })
             : locoScroll.scroll.instance.scroll.y;
         },
         getBoundingClientRect() {
