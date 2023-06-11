@@ -42,7 +42,7 @@ const Header: React.FC<TopNavProps> = () => {
             <div className="hd-heading-divder"></div>
             <Typography
               as="h6"
-              className="hd-3 text-uppercase heading cursor-effect"
+              className="hd-3 text-uppercase heading hd-end-text cursor-effect"
             >
               {endTexts.map((text, index) => (
                 <Typography

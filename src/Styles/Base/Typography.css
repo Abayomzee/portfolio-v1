@@ -22,7 +22,7 @@ body {
 .hd-3 {
   font-weight: 700;
   /* font-size: 18.5rem; */
-  font-size: clamp(6rem, 12vw, 18.5rem);
+  font-size: clamp(5.5rem, 11vw, 18.5rem);
   line-height: 100%;
   color: var(--color-primary);
 }

@@ -150,6 +150,13 @@
 /* End of margin right */
 /* End of Margins */
 
+.pl-10 {
+  padding-left: 1rem;
+}
+.pr-10 {
+  padding-right: 1rem;
+}
+
 /* Texts */
 .textCenter {
   text-align: center;

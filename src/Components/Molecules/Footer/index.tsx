@@ -14,7 +14,7 @@ const Footer: React.FC<FooterProps> = () => {
     >
       <Typography
         as="p"
-        className="prg-2 text-center max-width-480 mx-auto"
+        className="prg-2 text-center max-width-480 mx-auto pl-10 pr-10"
         text={`I’m currently available to new opportunities. Feel free to reach out`}
         dataAnimate="footer-child"
       />
