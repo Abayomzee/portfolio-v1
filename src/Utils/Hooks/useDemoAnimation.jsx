@@ -94,6 +94,7 @@ const useDemoAnimation = () => {
       gsap.set(prjCardsAfter, { height: "0" });
       gsap.set(projectsScrollDownArrow, { y: "-30", opacity: 0 });
       gsap.set(prjRowsAfter, { top: "120%" });
+      gsap.set(".prj", { y: 10, opacity: 0 });
 
       tl.current = gsap
         .timeline()
@@ -102,7 +103,6 @@ const useDemoAnimation = () => {
         .to(preloaderText, { y: -10, opacity: 0, delay: 3 })
         .to(preloaderProgress, { y: -10, opacity: 0 }, "<0.3")
         .to(preloaderWrapper, { y: -10, opacity: 0, display: "none" })
-
         .from(topNav, { opacity: 0, y: -30, duration: 0.4, ease: "linear" })
         .to(
           char,
@@ -145,7 +145,8 @@ const useDemoAnimation = () => {
           duration: 1.2,
           yoyo: true,
           repeat: -1,
-        });
+        })
+        .to(".prj", { y: 0, opacity: 1 }, "<-3.5");
 
       // Projects section
       prjTl.current = gsap
@@ -174,9 +175,6 @@ const useDemoAnimation = () => {
         .to(prjRowsAfter, { top: "100%", duration: 0.9, stagger: 0.1 }, "<")
         .to(prjCardsAfter, { height: "100%", duration: 1 }, "<");
 
-      // .to(projectCardTools, { y: "0", opacity: 1, duration: 0.6 }, "<=+0.4");
-
-      // function startProjectsAnim() {
       scrollTrigger.create({
         trigger: projectsSection,
         start: "top 60%",
@@ -185,7 +183,49 @@ const useDemoAnimation = () => {
         markers: false,
         scroller: ".scroll-handler",
       });
-      // }
+
+      // Project cards ----------------------------------------
+      const cards = document.querySelectorAll("div.prjc-column");
+      cards.forEach((card, index) => {
+        const cc = card.querySelector(".prjc-name");
+        const cccAfter = card.querySelector(`.mobile-bottom-line`);
+        const ccAfter = card.querySelector(`#prjc-description-${index + 1}`);
+
+        gsap.set(cccAfter, {
+          bottom: "-10px",
+          opacity: 0,
+        });
+        gsap.set(cc, { opacity: 0, y: "80" });
+        gsap.set(ccAfter, { y: "10px", opacity: 0 });
+
+        // Entrance anim
+        prjcTl.current = gsap
+          .timeline()
+          .to(cc, { y: "0", opacity: 1, duration: 0.6 })
+          .to(cccAfter, { bottom: "0", opacity: 1, duration: 0.6 }, "<0.3")
+          .to(ccAfter, { y: "0", opacity: 1, duration: 0.6 }, "<0.3");
+
+        scrollTrigger.create({
+          trigger: card,
+          start: "top 70%",
+          toggleActions: "restart none none reverse",
+          animation: prjcTl.current,
+          markers: false,
+          scroller: ".scroll-handler",
+        });
+
+        // Hover anim
+        const tl = gsap.timeline({ paused: true });
+        tl.to(cc, {
+          duration: 0.7,
+          backgroundImage:
+            "linear-gradient( to top, var(--bottom) 0%, var(--bottom) 100%, var(--top) 100%)",
+        });
+
+        card.addEventListener("mouseenter", () => tl.play());
+        card.addEventListener("mouseleave", () => tl.reverse());
+      });
+      // Project cards end --------------------------------------
 
       // Cursor
       // Cursor effect
@@ -230,50 +270,6 @@ const useDemoAnimation = () => {
         });
       });
       // Cursor effect ----------------------------------------
-
-      // Project cards ----------------------------------------
-      const cards = document.querySelectorAll("div.prjc-column");
-      cards.forEach((card, index) => {
-        const cc = card.querySelector(".prjc-name");
-        const cccAfter = card.querySelector(`.mobile-bottom-line`);
-        const ccAfter = card.querySelector(`#prjc-description-${index + 1}`);
-
-        gsap.set(cccAfter, {
-          bottom: "-10px",
-          opacity: 0,
-        });
-        gsap.set(cc, { opacity: 0, y: "80" });
-        gsap.set(ccAfter, { y: "10px", opacity: 0 });
-
-        // Entrance anim
-        prjcTl.current = gsap
-          .timeline()
-          .to(cc, { y: "0", opacity: 1, duration: 0.6 })
-          .to(cccAfter, { bottom: "0", opacity: 1, duration: 0.6 }, "<0.3")
-          .to(ccAfter, { y: "0", opacity: 1, duration: 0.6 }, "<0.3");
-
-        scrollTrigger.create({
-          trigger: card,
-          start: "top 70%",
-          toggleActions: "restart none none reverse",
-          animation: prjcTl.current,
-          markers: false,
-          scroller: ".scroll-handler",
-        });
-
-        // Hover anim
-        const tl = gsap.timeline({ paused: true });
-        tl.to(cc, {
-          duration: 0.7,
-          backgroundImage:
-            "linear-gradient( to top, var(--bottom) 0%, var(--bottom) 100%, var(--top) 100%)",
-        });
-
-        card.addEventListener("mouseenter", () => tl.play());
-        card.addEventListener("mouseleave", () => tl.reverse());
-      });
-
-      // Project cards end --------------------------------------
 
       // Footer animation
       gsap.from('[data-animate="footer-child"]', {
