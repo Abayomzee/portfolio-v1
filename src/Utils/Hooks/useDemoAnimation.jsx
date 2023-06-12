@@ -94,7 +94,7 @@ const useDemoAnimation = () => {
       gsap.set(prjCardsAfter, { height: "0" });
       gsap.set(projectsScrollDownArrow, { y: "-30", opacity: 0 });
       gsap.set(prjRowsAfter, { top: "120%" });
-      gsap.set(".prj", { y: 10, opacity: 0 });
+      gsap.set(projectsSection, { y: 10, opacity: 0 });
 
       tl.current = gsap
         .timeline()
@@ -146,7 +146,7 @@ const useDemoAnimation = () => {
           yoyo: true,
           repeat: -1,
         })
-        .to(".prj", { y: 0, opacity: 1 }, "<-3.5");
+        .to(projectsSection, { y: 0, opacity: 1 }, "<-3.5");
 
       // Projects section
       prjTl.current = gsap
