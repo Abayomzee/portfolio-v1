@@ -90,7 +90,7 @@
   /* flex-grow: 1; */
   height: 24rem;
   width: 33rem;
-  background-color: var(--color-bg);
+  background-color: transparent;
   border-radius: 2rem;
   margin-top: 2.6rem;
   opacity: 1;
