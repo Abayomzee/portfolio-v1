@@ -144,6 +144,12 @@ const TopNav = () => {
             </div>
             <Button
               className={"btn-primary btn-sm btn--resume cursor-effect small"}
+              onClick={() =>
+                window.open(
+                  "https://drive.google.com/file/d/1xqGFsfuEEdQC3OYR1bTDkW3SPil0mPm4/view?usp=sharing",
+                  "blank"
+                )
+              }
             >
               <span>Resume</span>
             </Button>

@@ -9,11 +9,11 @@ interface ButtonProps {
 }
 const Button: React.FC<ButtonProps> = (props) => {
   // Props
-  const { className, children } = props;
+  const { className, children, ...otherProps } = props;
 
   // Data to render
   return (
-    <button role={"button"} {...props} className={`btn ${className}`}>
+    <button className={`btn ${className}`} {...otherProps}>
       {children}
     </button>
   );

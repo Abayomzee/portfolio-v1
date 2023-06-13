@@ -64,8 +64,9 @@
   overflow: hidden;
 }
 
-.btn-primary:hover {
-  border: .5px solid var(--color-secondary);
+.btn-primary:hover,
+.btn-primary:focus {
+  border: 0.5px solid var(--color-secondary);
 }
 
 .btn-primary span {
@@ -77,6 +78,11 @@
 
 .btn-primary:hover span {
   color: var(--color-bg);
+  /* color: transparent; */
+}
+
+.btn-primary:focus span {
+  color: var(--color-secondary);
   /* color: transparent; */
 }
 
