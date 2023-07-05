@@ -146,7 +146,7 @@ const TopNav = () => {
               className={"btn-primary btn-sm btn--resume cursor-effect small"}
               onClick={() =>
                 window.open(
-                  "https://drive.google.com/file/d/1xqGFsfuEEdQC3OYR1bTDkW3SPil0mPm4/view?usp=sharing",
+                  "https://drive.google.com/file/d/1Ul4SkQ7r3iptghkqqMMaccSvP--zvkRP/view?usp=sharing",
                   "blank"
                 )
               }
