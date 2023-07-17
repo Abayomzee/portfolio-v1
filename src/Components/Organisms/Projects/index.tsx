@@ -20,7 +20,7 @@ const Projects: React.FC<TopNavProps> = () => {
       stacks: "HTML, CSS, JAVASCRIPT",
       col: "2",
       url: "https://dapp-exchange.on.fleek.co/",
-      description: "Crypto exchange",
+      description: "Decentralized exchange",
     },
     {
       name: "Chess",
