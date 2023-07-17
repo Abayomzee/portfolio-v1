@@ -29,13 +29,12 @@ const Projects: React.FC<TopNavProps> = () => {
       url: "https://nodcredit.com/",
       description: "Credit app",
     },
-
     {
-      name: "Metacare",
-      stacks: "REACT JS, FRAMER MOTION",
-      col: "4",
-      url: "https://meta-care-app.netlify.app/",
-      description: "Dashboard template",
+      name: "EduLearn",
+      stacks: "HTML, CSS, JAVASCRIPT",
+      col: "6",
+      url: "https://app.steviapro.com/",
+      description: "E-Learning app",
     },
     {
       name: "Qstore",
@@ -45,18 +44,11 @@ const Projects: React.FC<TopNavProps> = () => {
       description: "Online bookstore",
     },
     {
-      name: "EduLearn",
-      stacks: "HTML, CSS, JAVASCRIPT",
-      col: "6",
-      url: "https://app.steviapro.com/",
-      description: "E-Learning app",
-    },
-    {
-      name: "NodCredit",
-      stacks: "HTML, CSS, JAVASCRIPT",
-      col: "7",
-      url: "https://nodcredit.com/",
-      description: "Credit app",
+      name: "Metacare",
+      stacks: "REACT JS, FRAMER MOTION",
+      col: "4",
+      url: "https://meta-care-app.netlify.app/",
+      description: "Dashboard template",
     },
     {
       name: "Chess",
