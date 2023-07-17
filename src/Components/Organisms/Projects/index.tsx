@@ -23,12 +23,13 @@ const Projects: React.FC<TopNavProps> = () => {
       description: "Decentralized exchange",
     },
     {
-      name: "Chess",
-      stacks: "REACT JS",
+      name: "NodCredit",
+      stacks: "HTML, CSS, JAVASCRIPT",
       col: "3",
-      url: "https://montech-chess.vercel.app/",
-      description: "Web3 Chess game",
+      url: "https://nodcredit.com/",
+      description: "Credit app",
     },
+
     {
       name: "Metacare",
       stacks: "REACT JS, FRAMER MOTION",
@@ -56,6 +57,13 @@ const Projects: React.FC<TopNavProps> = () => {
       col: "7",
       url: "https://nodcredit.com/",
       description: "Credit app",
+    },
+    {
+      name: "Chess",
+      stacks: "REACT JS",
+      col: "7",
+      url: "https://montech-chess.vercel.app/",
+      description: "Web3 Chess game",
     },
   ];
 
