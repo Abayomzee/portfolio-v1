@@ -23,19 +23,20 @@ const Projects: React.FC<TopNavProps> = () => {
       description: "Decentralized exchange",
     },
     {
+      name: "Chess",
+      stacks: "REACT JS",
+      col: "3",
+      url: "https://montech-chess.vercel.app/",
+      description: "Web3 Chess game",
+    },
+    {
       name: "NodCredit",
       stacks: "HTML, CSS, JAVASCRIPT",
-      col: "3",
+      col: "4",
       url: "https://nodcredit.com/",
       description: "Credit app",
     },
-    {
-      name: "EduLearn",
-      stacks: "HTML, CSS, JAVASCRIPT",
-      col: "6",
-      url: "https://app.steviapro.com/",
-      description: "E-Learning app",
-    },
+
     {
       name: "Qstore",
       stacks: "REACT JS, FRAMER MOTION",
@@ -46,16 +47,16 @@ const Projects: React.FC<TopNavProps> = () => {
     {
       name: "Metacare",
       stacks: "REACT JS, FRAMER MOTION",
-      col: "4",
+      col: "6",
       url: "https://meta-care-app.netlify.app/",
       description: "Dashboard template",
     },
     {
-      name: "Chess",
-      stacks: "REACT JS",
+      name: "EduLearn",
+      stacks: "HTML, CSS, JAVASCRIPT",
       col: "7",
-      url: "https://montech-chess.vercel.app/",
-      description: "Web3 Chess game",
+      url: "https://app.steviapro.com/",
+      description: "E-Learning app",
     },
   ];
 
