@@ -9,10 +9,10 @@ const Projects: React.FC<TopNavProps> = () => {
   // Variables
   const data = [
     {
-      name: "Stevia",
+      name: "Lahdaa",
       stacks: "REACT JS, FRAMER MOTION",
       col: "1",
-      url: "https://www.steviapro.com",
+      url: "https://lahdaa.com/",
       description: "E-Learning platform",
     },
     {
